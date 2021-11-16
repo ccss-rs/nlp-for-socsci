@@ -14,7 +14,11 @@ Beyond internet mediums on their own is also the concurrent shift of preexisting
 
 <center>
 
+<<<<<<< HEAD
 ![From 1996 to 2021. Source: New York Times.](images/ny_times.png)
+=======
+![From 1996 to 2021. Source: New York Times.](nlp-for-socsci/_bookdown_files/images/ny_times.png)
+>>>>>>> 153d08cc34eed0ae49dcc8c714ccc1e41c7c1a05
 
 </center>
 
@@ -30,7 +34,11 @@ The subsequent recent adoption of NLP methods within social science research is 
 
 <center>
 
+<<<<<<< HEAD
 ![Word embeddings from Kozlowski, Taddy, and Evans 2019 & Structural Topic Models from Wilkerson & Casas 2017](images/css.png)
+=======
+![Word embeddings from Kozlowski, Taddy, and Evans 2019 & Structural Topic Models from Wilkerson & Casas 2017](nlp-for-socsci/_bookdown_files/images/css.png)
+>>>>>>> 153d08cc34eed0ae49dcc8c714ccc1e41c7c1a05
 
 </center>
 
@@ -42,7 +50,11 @@ Our dataset is 100,000 comments scraped from [“r/nyc”](https://www.reddit.co
 
 <center>
 
+<<<<<<< HEAD
 ![Landing page of r/nyc.](images/nyc.png)
+=======
+![Landing page of r/nyc.](nlp-for-socsci/_bookdown_files/images/nyc.png)
+>>>>>>> 153d08cc34eed0ae49dcc8c714ccc1e41c7c1a05
 
 </center>
 
