@@ -30,7 +30,7 @@ The subsequent recent adoption of NLP methods within social science research is 
 
 <center>
 
-![Word embeddings from Kozlowski, Taddy, and Evans 2019 & Structural Topic Models from Wilkerson & Casas 2017](_bookdown_files/images/css.png)
+![Word embeddings from Kozlowski, Taddy, and Evans 2019 & Structural Topic Models from Wilkerson & Casas 2017](nlp-for-socsci/docs/_bookdown_files/_bookdown_files/images/css.png)
 
 </center>
 
