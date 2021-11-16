@@ -16,7 +16,11 @@ Beyond internet mediums on their own is also the concurrent shift of preexisting
 
 <<<<<<< HEAD
 ![From 1996 to 2021. Source: New York Times.](images/ny_times.png)
+<<<<<<< HEAD
 =======
+=======
+ =======
+>>>>>>> 50b71a9a9c3dd2556d7bbd4f8b61c50257aaa697
 ![From 1996 to 2021. Source: New York Times.](images/ny_times.png)
 >>>>>>> 153d08cc34eed0ae49dcc8c714ccc1e41c7c1a05
 
