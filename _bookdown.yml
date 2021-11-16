@@ -1,0 +1,7 @@
+book_filename: "bookdown-demo"
+repo: https://github.com/ccss-rs/nlp-for-socsci
+output_dir: docs
+language:
+  ui:
+    chapter_name: "Chapter "
+delete_merged_file: true

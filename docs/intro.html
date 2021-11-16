@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Fundamental Concepts | Natural Language Processing for the Social Sciences</title>
+  <meta name="description" content="Chapter 1 Fundamental Concepts | Natural Language Processing for the Social Sciences User Guide." />
+  <meta name="generator" content="bookdown 0.24.3 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Fundamental Concepts | Natural Language Processing for the Social Sciences" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="http://ccss-rs/nlp-for-socsci" />
+  
+  <meta property="og:description" content="Chapter 1 Fundamental Concepts | Natural Language Processing for the Social Sciences User Guide." />
+  <meta name="github-repo" content="ccss-rs/nlp-for-socsci" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Fundamental Concepts | Natural Language Processing for the Social Sciences" />
+  
+  <meta name="twitter:description" content="Chapter 1 Fundamental Concepts | Natural Language Processing for the Social Sciences User Guide." />
+  
+
+<meta name="author" content="Remy Stewart" />
+
+
+<meta name="date" content="2021-11-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="textproc.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Fundamental Concepts</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#text-as-data"><i class="fa fa-check"></i><b>1.1</b> Text as Data</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#natural-language-processing"><i class="fa fa-check"></i><b>1.2</b> Natural Language Processing</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#computational-social-sciences"><i class="fa fa-check"></i><b>1.3</b> Computational Social Sciences</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#nlp-core-vocabulary"><i class="fa fa-check"></i><b>1.4</b> NLP Core Vocabulary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="textproc.html"><a href="textproc.html"><i class="fa fa-check"></i><b>2</b> Text Preprocessing</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="textproc.html"><a href="textproc.html#character-encoding"><i class="fa fa-check"></i><b>2.1</b> Character Encoding</a></li>
+<li class="chapter" data-level="2.2" data-path="textproc.html"><a href="textproc.html#string-cleaning"><i class="fa fa-check"></i><b>2.2</b> String Cleaning</a></li>
+<li class="chapter" data-level="2.3" data-path="textproc.html"><a href="textproc.html#regular-expressions"><i class="fa fa-check"></i><b>2.3</b> Regular Expressions</a></li>
+<li class="chapter" data-level="2.4" data-path="textproc.html"><a href="textproc.html#lowercasing-concatenation"><i class="fa fa-check"></i><b>2.4</b> Lowercasing &amp; Concatenation</a></li>
+<li class="chapter" data-level="2.5" data-path="textproc.html"><a href="textproc.html#tokenization"><i class="fa fa-check"></i><b>2.5</b> Tokenization</a></li>
+<li class="chapter" data-level="2.6" data-path="textproc.html"><a href="textproc.html#optional-method-dependent-preprocessing-steps"><i class="fa fa-check"></i><b>2.6</b> Optional Method-Dependent Preprocessing Steps</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="textproc.html"><a href="textproc.html#stopwords"><i class="fa fa-check"></i><b>2.6.1</b> Stopwords</a></li>
+<li class="chapter" data-level="2.6.2" data-path="textproc.html"><a href="textproc.html#stemming"><i class="fa fa-check"></i><b>2.6.2</b> Stemming</a></li>
+<li class="chapter" data-level="2.6.3" data-path="textproc.html"><a href="textproc.html#parts-of-speech"><i class="fa fa-check"></i><b>2.6.3</b> Parts-of-Speech</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="dictionary.html"><a href="dictionary.html"><i class="fa fa-check"></i><b>3</b> Dictionary Methods &amp; Sentiment Analysis</a></li>
+<li class="chapter" data-level="4" data-path="ml.html"><a href="ml.html"><i class="fa fa-check"></i><b>4</b> Machine Learning &amp; Topic Models</a></li>
+<li class="chapter" data-level="5" data-path="methodsethics.html"><a href="methodsethics.html"><i class="fa fa-check"></i><b>5</b> Additional Methods &amp; Ethical Considerations</a></li>
+<li class="chapter" data-level="6" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>6</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Natural Language Processing for the Social Sciences</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Fundamental Concepts</h1>
+<div id="text-as-data" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Text as Data</h2>
+<p>Text is a seminal communication medium within and produced by human interactions and social systems and has been a longstanding data source in social science research. However, text data has often been associated with qualitative scholarship given limitations of predominant quantitative methods for handling text and language. While the numerical analysis of text has been of ongoing interest of fields such as linguistics and information retrieval for decades, the employment of computational text analysis methods across a variety of disciplines has been a comparatively recent phenomenon. Said diffusion of the quantitative study of text is intimately tied to the Digital Revolution’s concurrent facilitation of the <em>accessibility</em> of text data as well as <em>ability to model</em> said records within computationally-powered analyses.</p>
+<p><em>Digital traces</em> or <em>footprints</em> refer to the records individuals leave behind of their behavior, thoughts, relationships, and beyond that are digitally recorded and often acquirable by third parties (Golder and Macy 2014). Text data is one of the most common types of digital traces as facilitated by the sharp rise of internet use, particularly as regarding social media platforms. Consider the following trend as visualized by Our World in Data of just how ubiquitous social media has become globally-</p>
+<iframe src="https://ourworldindata.org/grapher/users-by-social-media-platform?time=2004..2018&amp;country=Facebook~Instagram~MySpace~Pinterest~Reddit~Snapchat~TikTok~Tumblr~Twitter~WeChat~Whatsapp~YouTube" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
+</iframe>
+<p>While some of these platforms focus more on image and video content over text than others, all of them have at least some degree of text produced that is often publicly accessible. Plenty of additional websites such as online marketplaces or business and government sites also produce ample amounts of text to be used within social science research.</p>
+<p>Beyond internet mediums on their own is also the concurrent shift of preexisting print documents to digitized forms as well as the production of more recent documents to now be available online. Newspaper archives, government records, and books across languages are all examples of these sources. Researchers can now analyze historical documents through new methodological approaches through their digitized versions as well as connect published material across time from decades-old records to modern day.</p>
+<center>
+<div class="figure">
+<img src="_bookdown_files/images/ny_times.png" alt="" />
+<p class="caption">From 1996 to 2021. Source: New York Times.</p>
+</div>
+</center>
+</div>
+<div id="natural-language-processing" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Natural Language Processing</h2>
+<p>The rise of the internet and its ubiquitous cataloging of produced text is concurrent to the growth of resources and methods to computationally explore said written records. <em>Natural language processing</em>- shortened to NLP- is the field that specializes in using computational tools to interpret human language. NLP itself refers to a broad range of applications including speech and handwriting recognition, text generation, translation, and beyond. NLP methods range in complexity from simple counts of word occurrences to the ability to generate accurately predicted words through machine learning-powered artificial intelligence. Recent advances in NLP have increasingly been able to engage with more complex questions regarding text, such as the context words occur in, their conceptual similarities to other words, and the potentially multiple meanings of a given word.</p>
+<p>NLP and its respective methods can often be computationally resource intensive for storing, processing, and interpreting text. These barriers limited its more widespread adoption within research across fields such as the social sciences, along with barriers regarding learning new programming languages and computational skills. Advances in the availability of computing resources have significantly speed up what may have otherwise be painfully slow algorithmic analyses and have made storage systems to save massive collections of text data widely available. The open-source software development movement has additionally lead to innovations in programming resources to employ NLP that are free, methodologically rigorous, and often more accessibly designed to learn.</p>
+</div>
+<div id="computational-social-sciences" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Computational Social Sciences</h2>
+<p>The subsequent recent adoption of NLP methods within social science research is a subset of the wider disciplinary establishment of computational social sciences (CSS). Lazer et al. defines CCS as the “development and application of computational methods to complex, typically large-scale, human (sometimes simulated) behavioral data” (2009: 721). CCS spans a wide range of topics beyond text data analysis via NLP with additional core areas including online community network analysis, geospatial tracking, agent-based modeling, and many more examples. However, CSS is particularly well-aligned with NLP methods when considering how much information on human behavior is embedded within text. A particular strength social scientists offer when conducting CSS research with NLP methods is their personal expertise towards interpreting often nuanced and contextualized findings within text data. Social scientists have therefore been on the cutting edge for conducting NLP-powered research across diverse topics and have formed related communities within universities and conferences connecting CSS and NLP practitioners.</p>
+<center>
+<div class="figure">
+<img src="_bookdown_files/images/css.png" alt="" />
+<p class="caption">Word embeddings from Kozlowski, Taddy, and Evans 2019 &amp; Structural Topic Models from Wilkerson &amp; Casas 2017</p>
+</div>
+</center>
+</div>
+<div id="nlp-core-vocabulary" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> NLP Core Vocabulary</h2>
+<p>This guide will offer an introductory demo of how to apply NLP within your own research via R. Before moving to the guided applications, we must review a series of common terms within NLP that this guide will refer to. I’ll ground said terminology by first reviewing the dataset that all of the following chapters will use and is available on the guide’s GitHub repository.</p>
+<p>Our dataset is 100,000 comments scraped from <a href="https://www.reddit.com/r/nyc/">“r/nyc”</a> which is the largest community on the social media site Reddit for posts and conversation around anything related to New York City. I obtained these records through a recent call at the time of writing to the <a href="https://github.com/pushshift/api">Pushshift</a> Application Programming Interface (API) created by Jason Baumgartner. Reddit is known as the “Front Page of the Internet” and it is one of the most common social media sites studied within NLP research. Features of the platform that contribute to Reddit’s popularity within NLP is that its data is accessible to acquire, it features a range of sub-communities of potential interest, and it is a particularly discussion-orientated platform. I also note that using Reddit data- as is the case with virtually all publicly accessible online trace data- comes with its own ethical considerations regarding privacy, sensitivity, and expectations around use within research. Please refer to the “Ethics” section in the final chapter of this guide for further thoughts around said topics.</p>
+<center>
+<div class="figure">
+<img src="_bookdown_files/images/nyc.png" alt="" />
+<p class="caption">Landing page of r/nyc.</p>
+</div>
+</center>
+<p>Now that we’ve familiarized ourselves with our dataset, let’s consider how we would refer to its respective components through NLP terminology.</p>
+<ol style="list-style-type: decimal">
+<li><p>A <strong>corpus</strong> refers to the total collection of text being analyzed. This would be all 100k of our r/nyc Reddit comments. A <strong>vocabulary</strong> is the entire collection of unique words that occur within a given corpus.</p></li>
+<li><p>A <strong>document</strong> is an individual record within the corpus. This would be one particular collected r/nyc comment and all of its associated text.</p>
+<ul>
+<li>An example would be “My favorite pizza place in Hell’s Kitchen is 99 Cent Fresh Pizza. I really love their BBQ Chicken Slice.”</li>
+</ul></li>
+<li><p><strong>Tokens</strong> are the smaller composite units within a given document. “Tokens” on its own most commonly refers to individual words, but the actual process of tokenization can feature larger units such as sentences or paragraphs.</p>
+<ul>
+<li><p>When referring to the tokens of the document example above, “My,” “favorite,” “pizza,” and “place” would be considered as four separate tokens of the 21 total tokens including the sentence’s periods. However, another NLP method may instead operationalize this comment’s tokens as “My favorite pizza place in Hell’s Kitchen is 99 Cent Fresh Pizza.” and “I really love their BBQ Chicken Slice.”</p></li>
+<li><p>Tokenization can also be conducted to character-level granularity, such as “p,” “i,” “z,” “z,” “a”… and following through all other words within the comment.</p></li>
+</ul></li>
+<li><p><strong>N-grams</strong> considers multiple word tokens at once where “n” refers to a specified number. They are often employed for representing words that are conceptually different when considered as a whole unit rather than as individual tokens.</p>
+<ul>
+<li>The bi-gram of “Hell’s_Kitchen” is understood as a specific neighborhood through each word’s co-occurrence with each other than what “Hell’s” or “Kitchen” would imply on their own.</li>
+</ul></li>
+</ol>
+<p>These are the core terms necessary for an initial engagement with NLP methods and are often referred to directly within the R software packages we will be using in the following demos. With our core understanding of NLP and our dataset now cemented, let’s move on to our first key step within our text data analysis starting with text preprocessing in the next chapter.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="textproc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+--- 
+title: "Natural Language Processing for the Social Sciences"
+author: "Remy Stewart"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: abbrv
+link-citations: yes
+github-repo: ccss-rs/nlp-for-socsci
+url: 'http\://ccss-rs/nlp-for-socsci'
+description: "Natural Language Processing for the Social Sciences User Guide."
+---
+
+# Preface {-}
+\markboth{Preface}{}
+
+Welcome to the Natural Language Processing for Social Sciences User Guide provided by the Cornell Center for Social Sciences (CCSS)! This guide serves as both the written version of Spring 2022’s workshop under the same name as well as a standing reference available to wider Cornell community. 
+
+Are you… 
+
+*	Not too familiar with NLP and are looking for a broad view on the discipline as applicable to social sciences?
+*	Curious about ways you could potentially incorporate NLP into your research?
+*	Know enough R to understand its basic syntax?
+*	In search of simple and interpretable R code to get you started on using NLP?
+
+If any of these are true for you, I think you’ll be able to get something out of this guide.
+
+This guide is heavily inspired by a [whole](https://cfss.uchicago.edu/) [series](https://cbail.github.io/ids704/Home.html) [of](https://www.tidytextmining.com/index.html) [similar](https://slcladal.github.io/index.html) [works](https://m-clark.github.io/text-analysis-with-R/) [designed](https://melaniewalsh.github.io/Intro-Cultural-Analytics/welcome.html) to introduce NLP to social scientists or for providing code demos in R for various NLP tasks. Almost all of these resources go further into depth on the topics introduced within this guide and I highly recommend them all as additional references. 
+
+A little about the author- my name is Remy Stewart and I am both a PhD Candidate in the Sociology Department here at Cornell as well as a Data Science Consultant for CCSS. I use NLP extensively within my own research that investigates how technology impacts public policy and perpetuates inequality within US urban regions. This work therefore unavoidably reflects my own disciplinary training biases, but I intentionally designed it to be as widely applicable to readers across social science fields as possible. 
+
+You’ll be able to navigate through the individual chapters of the guide through the index to the left. The chapters do build from each other particularly  regarding the core concepts and coding components, but can stand alone for each topic as well. 
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
