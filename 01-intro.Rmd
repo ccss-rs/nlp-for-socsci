@@ -14,7 +14,7 @@ Beyond internet mediums on their own is also the concurrent shift of preexisting
 
 <center>
 
-![From 1996 to 2021. Source: New York Times.](nlp-for-socsci/docs/_bookdown_files/images/ny_times.PNG)
+![From 1996 to 2021. Source: New York Times.](nlp-for-socsci/docs/_bookdown_files/images/ny_times.png)
 
 </center>
 
@@ -42,7 +42,7 @@ Our dataset is 100,000 comments scraped from [“r/nyc”](https://www.reddit.co
 
 <center>
 
-![Landing page of r/nyc.](nlp-for-socsci/docs/_bookdown_files/_bookdown_files/images/nyc.PNG)
+![Landing page of r/nyc.](nlp-for-socsci/docs/_bookdown_files/_bookdown_files/images/nyc.png)
 
 </center>
 
