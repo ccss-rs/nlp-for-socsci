@@ -194,10 +194,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>While some of these platforms focus more on image and video content over text than others, all of them have at least some degree of text produced that is often publicly accessible. Plenty of additional websites such as online marketplaces or business and government sites also produce ample amounts of text to be used within social science research.</p>
 <p>Beyond internet mediums on their own is also the concurrent shift of preexisting print documents to digitized forms as well as the production of more recent documents to now be available online. Newspaper archives, government records, and books across languages are all examples of these sources. Researchers can now analyze historical documents through new methodological approaches through their digitized versions as well as connect published material across time from decades-old records to modern day.</p>
 <center>
-<div class="figure">
-<img src="nlp-for-socsci/_bookdown_files/images/ny_times.png" alt="" />
-<p class="caption">From 1996 to 2021. Source: New York Times.</p>
-</div>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<img src="images/ny_times.png" alt="From 1996 to 2021. Source: New York Times." />
+=======
+<img src="images/ny_times.png" alt="From 1996 to 2021. Source: New York Times." />
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 153d08cc34eed0ae49dcc8c714ccc1e41c7c1a05</p>
 </center>
 </div>
 <div id="natural-language-processing" class="section level2" number="1.2">
@@ -209,10 +210,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">1.3</span> Computational Social Sciences</h2>
 <p>The subsequent recent adoption of NLP methods within social science research is a subset of the wider disciplinary establishment of computational social sciences (CSS). Lazer et al. defines CCS as the “development and application of computational methods to complex, typically large-scale, human (sometimes simulated) behavioral data” (2009: 721). CCS spans a wide range of topics beyond text data analysis via NLP with additional core areas including online community network analysis, geospatial tracking, agent-based modeling, and many more examples. However, CSS is particularly well-aligned with NLP methods when considering how much information on human behavior is embedded within text. A particular strength social scientists offer when conducting CSS research with NLP methods is their personal expertise towards interpreting often nuanced and contextualized findings within text data. Social scientists have therefore been on the cutting edge for conducting NLP-powered research across diverse topics and have formed related communities within universities and conferences connecting CSS and NLP practitioners.</p>
 <center>
-<div class="figure">
-<img src="nlp-for-socsci/_bookdown_files/images/css.png" alt="" />
-<p class="caption">Word embeddings from Kozlowski, Taddy, and Evans 2019 &amp; Structural Topic Models from Wilkerson &amp; Casas 2017</p>
-</div>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<img src="images/css.png" alt="Word embeddings from Kozlowski, Taddy, and Evans 2019 &amp; Structural Topic Models from Wilkerson &amp; Casas 2017" />
+=======
+<img src="images/css.png" alt="Word embeddings from Kozlowski, Taddy, and Evans 2019 &amp; Structural Topic Models from Wilkerson &amp; Casas 2017" />
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 153d08cc34eed0ae49dcc8c714ccc1e41c7c1a05</p>
 </center>
 </div>
 <div id="nlp-core-vocabulary" class="section level2" number="1.4">
@@ -220,10 +222,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This guide will offer an introductory demo of how to apply NLP within your own research via R. Before moving to the guided applications, we must review a series of common terms within NLP that this guide will refer to. I’ll ground said terminology by first reviewing the dataset that all of the following chapters will use and is available on the guide’s GitHub repository.</p>
 <p>Our dataset is 100,000 comments scraped from <a href="https://www.reddit.com/r/nyc/">“r/nyc”</a> which is the largest community on the social media site Reddit for posts and conversation around anything related to New York City. I obtained these records through a recent call at the time of writing to the <a href="https://github.com/pushshift/api">Pushshift</a> Application Programming Interface (API) created by Jason Baumgartner. Reddit is known as the “Front Page of the Internet” and it is one of the most common social media sites studied within NLP research. Features of the platform that contribute to Reddit’s popularity within NLP is that its data is accessible to acquire, it features a range of sub-communities of potential interest, and it is a particularly discussion-orientated platform. I also note that using Reddit data- as is the case with virtually all publicly accessible online trace data- comes with its own ethical considerations regarding privacy, sensitivity, and expectations around use within research. Please refer to the “Ethics” section in the final chapter of this guide for further thoughts around said topics.</p>
 <center>
-<div class="figure">
-<img src="nlp-for-socsci/_bookdown_files/images/nyc.png" alt="" />
-<p class="caption">Landing page of r/nyc.</p>
-</div>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<img src="images/nyc.png" alt="Landing page of r/nyc." />
+=======
+<img src="images/nyc.png" alt="Landing page of r/nyc." />
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 153d08cc34eed0ae49dcc8c714ccc1e41c7c1a05</p>
 </center>
 <p>Now that we’ve familiarized ourselves with our dataset, let’s consider how we would refer to its respective components through NLP terminology.</p>
 <ol style="list-style-type: decimal">
