@@ -14,9 +14,6 @@ stopwords
 stemming
 parts-of-speech
 dictionary
-ml
-methodsethics
-references
 types-of-dictionaries
 sentiment-analysis
 vader
@@ -24,6 +21,7 @@ string-sentiment
 rnyc-sentiment
 sentiment-score
 beyond-dictionaries
+ml
 supervised-vs.-unsupervised-learning
 topic-models
 structural-topic-models
@@ -31,3 +29,5 @@ preprocessing
 fitting-the-model
 variation-by-comment-score
 extending-machine-learning
+methodsethics
+references

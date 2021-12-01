@@ -24,7 +24,7 @@
 <meta name="author" content="Remy Stewart" />
 
 
-<meta name="date" content="2021-11-16" />
+<meta name="date" content="2021-12-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -159,8 +159,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6.3" data-path="textproc.html"><a href="textproc.html#parts-of-speech"><i class="fa fa-check"></i><b>2.6.3</b> Parts-of-Speech</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="dictionary.html"><a href="dictionary.html"><i class="fa fa-check"></i><b>3</b> Dictionary Methods &amp; Sentiment Analysis</a></li>
-<li class="chapter" data-level="4" data-path="ml.html"><a href="ml.html"><i class="fa fa-check"></i><b>4</b> Machine Learning &amp; Topic Models</a></li>
+<li class="chapter" data-level="3" data-path="dictionary.html"><a href="dictionary.html"><i class="fa fa-check"></i><b>3</b> Dictionaries &amp; Sentiment Analysis</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="dictionary.html"><a href="dictionary.html#types-of-dictionaries"><i class="fa fa-check"></i><b>3.1</b> Types of Dictionaries</a></li>
+<li class="chapter" data-level="3.2" data-path="dictionary.html"><a href="dictionary.html#sentiment-analysis"><i class="fa fa-check"></i><b>3.2</b> Sentiment Analysis</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="dictionary.html"><a href="dictionary.html#vader"><i class="fa fa-check"></i><b>3.2.1</b> VADER</a></li>
+<li class="chapter" data-level="3.2.2" data-path="dictionary.html"><a href="dictionary.html#string-sentiment"><i class="fa fa-check"></i><b>3.2.2</b> String Sentiment</a></li>
+<li class="chapter" data-level="3.2.3" data-path="dictionary.html"><a href="dictionary.html#rnyc-sentiment"><i class="fa fa-check"></i><b>3.2.3</b> r/nyc Sentiment</a></li>
+<li class="chapter" data-level="3.2.4" data-path="dictionary.html"><a href="dictionary.html#sentiment-score"><i class="fa fa-check"></i><b>3.2.4</b> Sentiment &amp; Score</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="dictionary.html"><a href="dictionary.html#beyond-dictionaries"><i class="fa fa-check"></i><b>3.3</b> Beyond Dictionaries</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ml.html"><a href="ml.html"><i class="fa fa-check"></i><b>4</b> Machine Learning &amp; Topic Models</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ml.html"><a href="ml.html#supervised-vs.-unsupervised-learning"><i class="fa fa-check"></i><b>4.1</b> Supervised vs. Unsupervised Learning</a></li>
+<li class="chapter" data-level="4.2" data-path="ml.html"><a href="ml.html#topic-models"><i class="fa fa-check"></i><b>4.2</b> Topic Models</a></li>
+<li class="chapter" data-level="4.3" data-path="ml.html"><a href="ml.html#structural-topic-models"><i class="fa fa-check"></i><b>4.3</b> Structural Topic Models</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="ml.html"><a href="ml.html#preprocessing"><i class="fa fa-check"></i><b>4.3.1</b> Preprocessing</a></li>
+<li class="chapter" data-level="4.3.2" data-path="ml.html"><a href="ml.html#fitting-the-model"><i class="fa fa-check"></i><b>4.3.2</b> Fitting the Model</a></li>
+<li class="chapter" data-level="4.3.3" data-path="ml.html"><a href="ml.html#variation-by-comment-score"><i class="fa fa-check"></i><b>4.3.3</b> Variation by Comment Score</a></li>
+<li class="chapter" data-level="4.3.4" data-path="ml.html"><a href="ml.html#extending-machine-learning"><i class="fa fa-check"></i><b>4.3.4</b> Extending Machine Learning</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="methodsethics.html"><a href="methodsethics.html"><i class="fa fa-check"></i><b>5</b> Additional Methods &amp; Ethical Considerations</a></li>
 <li class="chapter" data-level="6" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>6</b> References</a></li>
 <li class="divider"></li>
@@ -209,18 +231,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Our 1 confidence score on the UTF-8 encoding for the text column of our data frame gives us assurance that the following preprocessing methods should work without issues around character encoding. Let’s now inspect our dataset in more detail.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="textproc.html#cb4-1" aria-hidden="true" tabindex="-1"></a>nyc </span></code></pre></div>
 <pre><code>## # A tibble: 100,000 × 5
-##        id author               body                                           score date  
-##     &lt;dbl&gt; &lt;chr&gt;                &lt;chr&gt;                                          &lt;dbl&gt; &lt;chr&gt; 
-##  1   2666 chillwavexyx         &quot;Not just my experience, unfortunately. Very …     1 11/4/…
-##  2  30225 MG7444               &quot;Was Joe Biden disciplined? AOC? Any of the D…   -10 10/21…
-##  3  85724 robswins             &quot;Imagine if cities actually used police like …    27 9/20/…
-##  4  13927 nydutch              &quot;No, it really, really is not. I don&#39;t see an…     1 10/30…
-##  5 117584 kittygirl9891        &quot;I&#39;m so worried about my car. It&#39;s parked in …     7 9/2/21
-##  6 100790 Darrkman             &quot;Oh lord. \n\nI bet you&#39;re 30 yrs old at the …     1 9/10/…
-##  7  69805 Solagnas             &quot;You inferred wrong, idk what to tell you man…    -2 9/28/…
-##  8 138396 TheNormalAlternative &quot;Last I checked, this bridge was 30 miles nor…    -6 8/20/…
-##  9 125491 couchTomatoe         &quot;Yes, I said that. Every corner.&quot;                  2 8/27/…
-## 10  96017 twelvydubs           &quot;Earlier in the year we already extended WFH …    19 9/13/…
+##        id author               body                                                                                          score date   
+##     &lt;dbl&gt; &lt;chr&gt;                &lt;chr&gt;                                                                                         &lt;dbl&gt; &lt;chr&gt;  
+##  1   2666 chillwavexyx         &quot;Not just my experience, unfortunately. Very hard to take them on their word after what they…     1 11/4/21
+##  2  30225 MG7444               &quot;Was Joe Biden disciplined? AOC? Any of the Democrats who are routinely photographed and vid…   -10 10/21/…
+##  3  85724 robswins             &quot;Imagine if cities actually used police like this. There are dozens of places I see where pe…    27 9/20/21
+##  4  13927 nydutch              &quot;No, it really, really is not. I don&#39;t see any hoookers pissing in the middle of 42nd st.&quot;        1 10/30/…
+##  5 117584 kittygirl9891        &quot;I&#39;m so worried about my car. It&#39;s parked in a basement garage. 😭&quot;                               7 9/2/21 
+##  6 100790 Darrkman             &quot;Oh lord. \n\nI bet you&#39;re 30 yrs old at the oldest. \n\nDude I&#39;m not gonna explain to you a…     1 9/10/21
+##  7  69805 Solagnas             &quot;You inferred wrong, idk what to tell you man. Its efficacy is what it is, it&#39;s not more or …    -2 9/28/21
+##  8 138396 TheNormalAlternative &quot;Last I checked, this bridge was 30 miles north of NYC.&quot;                                         -6 8/20/21
+##  9 125491 couchTomatoe         &quot;Yes, I said that. Every corner.&quot;                                                                 2 8/27/21
+## 10  96017 twelvydubs           &quot;Earlier in the year we already extended WFH to early 2022. Now it&#39;s been extended even deep…    19 9/13/21
 ## # … with 99,990 more rows</code></pre>
 <p>This provides us with the first 10 records of our dataset. “id” is the unique identifier for each individual comment, “author” provides the Reddit username who wrote the comment, “body” features the text of the comment itself, “score” refers to the Reddit system of being able to “upvote” or “downvote” comments similar to a like/dislike framework, and “date” as the year, month, and day the comment was posted. Our preprocessing will focus on “body” as the main text data feature of our data.</p>
 </div>
