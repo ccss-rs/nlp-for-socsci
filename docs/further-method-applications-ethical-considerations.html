@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Further Method Applications &amp; Ethical Considerations | Natural Language Processing for the Social Sciences</title>
+  <meta name="description" content="Chapter 6 Further Method Applications &amp; Ethical Considerations | Natural Language Processing for the Social Sciences User Guide." />
+  <meta name="generator" content="bookdown 0.24.3 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Further Method Applications &amp; Ethical Considerations | Natural Language Processing for the Social Sciences" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="http://ccss-rs/nlp-for-socsci" />
+  
+  <meta property="og:description" content="Chapter 6 Further Method Applications &amp; Ethical Considerations | Natural Language Processing for the Social Sciences User Guide." />
+  <meta name="github-repo" content="ccss-rs/nlp-for-socsci" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Further Method Applications &amp; Ethical Considerations | Natural Language Processing for the Social Sciences" />
+  
+  <meta name="twitter:description" content="Chapter 6 Further Method Applications &amp; Ethical Considerations | Natural Language Processing for the Social Sciences User Guide." />
+  
+
+<meta name="author" content="Remy Stewart" />
+
+
+<meta name="date" content="2021-12-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="methodsethics.html"/>
+<link rel="next" href="future-directions.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Fundamental Concepts</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#text-as-data"><i class="fa fa-check"></i><b>1.1</b> Text as Data</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#natural-language-processing"><i class="fa fa-check"></i><b>1.2</b> Natural Language Processing</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#computational-social-sciences"><i class="fa fa-check"></i><b>1.3</b> Computational Social Sciences</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#nlp-core-vocabulary"><i class="fa fa-check"></i><b>1.4</b> NLP Core Vocabulary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="textproc.html"><a href="textproc.html"><i class="fa fa-check"></i><b>2</b> Text Preprocessing</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="textproc.html"><a href="textproc.html#character-encoding"><i class="fa fa-check"></i><b>2.1</b> Character Encoding</a></li>
+<li class="chapter" data-level="2.2" data-path="textproc.html"><a href="textproc.html#string-cleaning"><i class="fa fa-check"></i><b>2.2</b> String Cleaning</a></li>
+<li class="chapter" data-level="2.3" data-path="textproc.html"><a href="textproc.html#regular-expressions"><i class="fa fa-check"></i><b>2.3</b> Regular Expressions</a></li>
+<li class="chapter" data-level="2.4" data-path="textproc.html"><a href="textproc.html#lowercasing-concatenation"><i class="fa fa-check"></i><b>2.4</b> Lowercasing &amp; Concatenation</a></li>
+<li class="chapter" data-level="2.5" data-path="textproc.html"><a href="textproc.html#tokenization"><i class="fa fa-check"></i><b>2.5</b> Tokenization</a></li>
+<li class="chapter" data-level="2.6" data-path="textproc.html"><a href="textproc.html#optional-method-dependent-preprocessing-steps"><i class="fa fa-check"></i><b>2.6</b> Optional Method-Dependent Preprocessing Steps</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="textproc.html"><a href="textproc.html#stopwords"><i class="fa fa-check"></i><b>2.6.1</b> Stopwords</a></li>
+<li class="chapter" data-level="2.6.2" data-path="textproc.html"><a href="textproc.html#stemming"><i class="fa fa-check"></i><b>2.6.2</b> Stemming</a></li>
+<li class="chapter" data-level="2.6.3" data-path="textproc.html"><a href="textproc.html#parts-of-speech"><i class="fa fa-check"></i><b>2.6.3</b> Parts-of-Speech</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="dictionary.html"><a href="dictionary.html"><i class="fa fa-check"></i><b>3</b> Dictionaries &amp; Sentiment Analysis</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="dictionary.html"><a href="dictionary.html#types-of-dictionaries"><i class="fa fa-check"></i><b>3.1</b> Types of Dictionaries</a></li>
+<li class="chapter" data-level="3.2" data-path="dictionary.html"><a href="dictionary.html#sentiment-analysis"><i class="fa fa-check"></i><b>3.2</b> Sentiment Analysis</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="dictionary.html"><a href="dictionary.html#vader"><i class="fa fa-check"></i><b>3.2.1</b> VADER</a></li>
+<li class="chapter" data-level="3.2.2" data-path="dictionary.html"><a href="dictionary.html#string-sentiment"><i class="fa fa-check"></i><b>3.2.2</b> String Sentiment</a></li>
+<li class="chapter" data-level="3.2.3" data-path="dictionary.html"><a href="dictionary.html#rnyc-sentiment"><i class="fa fa-check"></i><b>3.2.3</b> r/nyc Sentiment</a></li>
+<li class="chapter" data-level="3.2.4" data-path="dictionary.html"><a href="dictionary.html#sentiment-score"><i class="fa fa-check"></i><b>3.2.4</b> Sentiment &amp; Score</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="dictionary.html"><a href="dictionary.html#beyond-dictionaries"><i class="fa fa-check"></i><b>3.3</b> Beyond Dictionaries</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ml.html"><a href="ml.html"><i class="fa fa-check"></i><b>4</b> Machine Learning &amp; Topic Models</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ml.html"><a href="ml.html#supervised-vs.-unsupervised-learning"><i class="fa fa-check"></i><b>4.1</b> Supervised vs. Unsupervised Learning</a></li>
+<li class="chapter" data-level="4.2" data-path="ml.html"><a href="ml.html#topic-models"><i class="fa fa-check"></i><b>4.2</b> Topic Models</a></li>
+<li class="chapter" data-level="4.3" data-path="ml.html"><a href="ml.html#structural-topic-models"><i class="fa fa-check"></i><b>4.3</b> Structural Topic Models</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="ml.html"><a href="ml.html#preprocessing"><i class="fa fa-check"></i><b>4.3.1</b> Preprocessing</a></li>
+<li class="chapter" data-level="4.3.2" data-path="ml.html"><a href="ml.html#fitting-the-model"><i class="fa fa-check"></i><b>4.3.2</b> Fitting the Model</a></li>
+<li class="chapter" data-level="4.3.3" data-path="ml.html"><a href="ml.html#variation-by-comment-score"><i class="fa fa-check"></i><b>4.3.3</b> Variation by Comment Score</a></li>
+<li class="chapter" data-level="4.3.4" data-path="ml.html"><a href="ml.html#extending-machine-learning"><i class="fa fa-check"></i><b>4.3.4</b> Extending Machine Learning</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="methodsethics.html"><a href="methodsethics.html"><i class="fa fa-check"></i><b>5</b> Additional Methods &amp; Ethical Considerations</a></li>
+<li class="chapter" data-level="6" data-path="further-method-applications-ethical-considerations.html"><a href="further-method-applications-ethical-considerations.html"><i class="fa fa-check"></i><b>6</b> Further Method Applications &amp; Ethical Considerations</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="further-method-applications-ethical-considerations.html"><a href="further-method-applications-ethical-considerations.html#embeddings"><i class="fa fa-check"></i><b>6.1</b> Embeddings</a></li>
+<li class="chapter" data-level="6.2" data-path="further-method-applications-ethical-considerations.html"><a href="further-method-applications-ethical-considerations.html#supervised-classification"><i class="fa fa-check"></i><b>6.2</b> Supervised Classification</a></li>
+<li class="chapter" data-level="6.3" data-path="further-method-applications-ethical-considerations.html"><a href="further-method-applications-ethical-considerations.html#networks"><i class="fa fa-check"></i><b>6.3</b> Networks</a></li>
+<li class="chapter" data-level="6.4" data-path="further-method-applications-ethical-considerations.html"><a href="further-method-applications-ethical-considerations.html#causality"><i class="fa fa-check"></i><b>6.4</b> Causality</a></li>
+<li class="chapter" data-level="6.5" data-path="further-method-applications-ethical-considerations.html"><a href="further-method-applications-ethical-considerations.html#ethics-of-nlp"><i class="fa fa-check"></i><b>6.5</b> Ethics of NLP</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="future-directions.html"><a href="future-directions.html"><i class="fa fa-check"></i><b>7</b> Future Directions</a></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="references.html"><a href="references.html#chapter-1--introduction"><i class="fa fa-check"></i><b>8.1</b> Chapter 1- Introduction</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="references.html"><a href="references.html#data-and-the-information-age"><i class="fa fa-check"></i><b>8.1.1</b> Data and the Information Age</a></li>
+<li class="chapter" data-level="8.1.2" data-path="references.html"><a href="references.html#css-and-nlp"><i class="fa fa-check"></i><b>8.1.2</b> CSS and NLP</a></li>
+<li class="chapter" data-level="8.1.3" data-path="references.html"><a href="references.html#nlp-resources-specific-to-r-applications"><i class="fa fa-check"></i><b>8.1.3</b> NLP Resources Specific to R Applications</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="references.html"><a href="references.html#chapter-2--text-preprocessing"><i class="fa fa-check"></i><b>8.2</b> Chapter 2- Text Preprocessing</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="references.html"><a href="references.html#text-preprocessing"><i class="fa fa-check"></i><b>8.2.1</b> Text Preprocessing</a></li>
+<li class="chapter" data-level="8.2.2" data-path="references.html"><a href="references.html#stemming-stopwords-and-parts-of-speech"><i class="fa fa-check"></i><b>8.2.2</b> Stemming, Stopwords, and Parts of Speech</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="references.html"><a href="references.html#chapter-3-dictionaries-sentiment-analysis"><i class="fa fa-check"></i><b>8.3</b> Chapter 3 – Dictionaries &amp; Sentiment Analysis</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="references.html"><a href="references.html#counts-dictionary-based-studies"><i class="fa fa-check"></i><b>8.3.1</b> Counts &amp; Dictionary Based Studies</a></li>
+<li class="chapter" data-level="8.3.2" data-path="references.html"><a href="references.html#liwc"><i class="fa fa-check"></i><b>8.3.2</b> LIWC</a></li>
+<li class="chapter" data-level="8.3.3" data-path="references.html"><a href="references.html#sentiment-analysis-1"><i class="fa fa-check"></i><b>8.3.3</b> Sentiment Analysis</a></li>
+<li class="chapter" data-level="8.3.4" data-path="references.html"><a href="references.html#vader-1"><i class="fa fa-check"></i><b>8.3.4</b> VADER</a></li>
+<li class="chapter" data-level="8.3.5" data-path="references.html"><a href="references.html#alternative-sentiment-analysis-approaches"><i class="fa fa-check"></i><b>8.3.5</b> Alternative Sentiment Analysis Approaches</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="references.html"><a href="references.html#chapter-4--machine-learning-topic-models"><i class="fa fa-check"></i><b>8.4</b> Chapter 4- Machine Learning &amp; Topic Models</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="references.html"><a href="references.html#machine-learning-for-social-science-annual-reviews"><i class="fa fa-check"></i><b>8.4.1</b> Machine Learning for Social Science Annual Reviews</a></li>
+<li class="chapter" data-level="8.4.2" data-path="references.html"><a href="references.html#topic-model-papers"><i class="fa fa-check"></i><b>8.4.2</b> Topic Model Papers</a></li>
+<li class="chapter" data-level="8.4.3" data-path="references.html"><a href="references.html#structural-topic-models-author-papers"><i class="fa fa-check"></i><b>8.4.3</b> Structural Topic Models Author Papers</a></li>
+<li class="chapter" data-level="8.4.4" data-path="references.html"><a href="references.html#css-research-using-topic-models"><i class="fa fa-check"></i><b>8.4.4</b> CSS Research Using Topic Models</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="references.html"><a href="references.html#chapter-5--further-applications-ethics"><i class="fa fa-check"></i><b>8.5</b> Chapter 5- Further Applications &amp; Ethics</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="references.html"><a href="references.html#further-applications"><i class="fa fa-check"></i><b>8.5.1</b> Further Applications</a></li>
+<li class="chapter" data-level="8.5.2" data-path="references.html"><a href="references.html#ethics-within-nlp"><i class="fa fa-check"></i><b>8.5.2</b> Ethics within NLP</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Natural Language Processing for the Social Sciences</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="further-method-applications-ethical-considerations" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Further Method Applications &amp; Ethical Considerations</h1>
+<p>The previous chapters of this user guide offer applied introductions to NLP methods than can power your own research with text data. However, we’ve only scratched the surface of the range of potential NLP methods available to social scientists. I’ll therefore briefly introduce four more common NLP topics that I recommend further reading on via the provided reference section at the end of the user guide if any seem potentially well-aligned to your research interests.</p>
+<div id="embeddings" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Embeddings</h2>
+<p>Word embeddings are both a relevant individual approach for text-based research as well as a core text preprocessing specification that is combined with other methods. Word embeddings represent words in their lexical contexts by encoding each document as a vector of numbers. These vectors are produced through <em>dimensionality reduction</em> that collapses large vocabularies into a smaller numeric representation. Word embeddings are effective of capturing how words relate to each other through their similar or different contexts in text as inscribed in the <em>vector space</em> of each produced dimension within the vocabulary. The method is known for facilitating the accurate answering of word analogy test such as correctly identifying that “king - man + woman” equals “queen” within embedding-powered models.</p>
+<center>
+<img src="images/embed.png" title="fig:" alt="An example of the projection of words by vector dimensions." />
+</center>
+<p>Embeddings can be incorporated within your text through a variety of training approaches and open-sourced resources such as <a href="https://www.tensorflow.org/tutorials/text/word2vec">Word2Vec</a> and <a href="https://nlp.stanford.edu/projects/glove/">GloVe</a>. Although both models were originally designed for Python, they are available within R through the keras or text2vec packages for Word2Vec and GloVE respectively. Embeddings can come pre-trained as produced from often massive text datasets or can be locally trained to your specific corpus. Local training can be of particular interest to social scientists to see how your text data uniquely contextualizes words as related to each other. Locally trained embeddings have been successfully used in previous research to explore how social phenomenon such as bias and stereotypes, cognitive schemas, and inequality along race, class, and gender is captured within text.</p>
+</div>
+<div id="supervised-classification" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Supervised Classification</h2>
+<p>While methods such as topic models explore previously unknown text relationships within datasets via unsupervised machine learning, supervised methods learn relationships through provided information on training data that can then be applied to new data without equivalent markers. They are commonly used to classify texts into relevant categories and draw from a wide range of algorithms from predictive logistic regression models familiar to social scientists to computationally complex neural networks that use deep learning.</p>
+<p>Supervised classification models can be very effective in identifying categorical aggregate trends within large text corpuses across domains. They also have specific design requirements that heavily define their suitability for different research projects. Supervised learning depends on previously identified <em>labeled</em> data, such as the relevant output categories of a sample of text which the model will learn to replicate its predictive design. Previous acquired labels can also be necessary for the independent variables of classifiers commonly known as <em>features</em> which usually includes the direct text itself as well as additional variables called <em>metadata</em>. Sometimes necessary labels for supervised models are readily available within your preestablished data, but oftentimes they are not particularly regarding complex themes within text that social scientists are interested in. The need to acquire labeled data is therefore a common expense and challenge associated with NLP supervised learning. Supervised learning algorithms can also be quite complicated to learn how to successfully implement, are often computationally expensive to fine-tune both regarding time and cost, and many are considered “black boxes” in their lack of transparency regarding how they actually learn to classify text data into groups.</p>
+<p>Despite these relevant limitations, supervised classification is still a viable NLP method that underlies recent achievements towards processing text data for use cases such as speech recognition, language translation, and text generation. It can be effectively used within social science research when its specific requirements are reasonably achievable for a given text-relevant research question. I highly recommend the tidymodels packages which aggregates a variety of machine learning libraries in R into a consistent syntax for building supervised classifier models, as well as the (Supervised Machine Learning for Text Analysis in R)[ <a href="https://smltar.com/" class="uri">https://smltar.com/</a>] guide by Emil Hvitfeldt and Julia Silge for step-by-step code walkthroughs of potential models.</p>
+</div>
+<div id="networks" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Networks</h2>
+<p>Social network analysis refers to a broader social science subfield with preestablished theory and methods that can translate quite effectively to text data applications. Networks between text maps how language relates to each other within a wider corpus. Networks are commonly constructed via nodes that represent a unit in a network to edges that connect nodes as defined by their networked relationship to each other. Nodes within text-based networks can characterize individual words, documents, authors, or communities. Edges can therefore represent an equivalently wide variety of connections within text such as how words co-occur with each other within sentences, how documents have lexical similarities with other works, or how authors converse with each other within wider writing-based communities.</p>
+<center>
+<div class="figure">
+<img src="images/network.png" alt="" />
+<p class="caption">Simple network representation of the document “The dog wakes. The cat sleeps.”</p>
+</div>
+<center>
+<p>Networks often serve as another exploratory method aligned with unsupervised machine learning in that they are both well-suited to capture latent themes and topical clusters within text. Network text analysis is particularly effective at highlighting relationship strength between text nodes, their similarities, differences, and changing connections over time. The use of graph-theory based visualizations displays network findings in a form that makes identifying subgroups and communities often quite intuitive. Additional analytic tools such as community detection algorithms that automate subgroup discovery and centrality measures to quantify how a given node connects to multiple communities within a network further strengthen network methods’ exploratory potential. Christian Bail’s (textnets)[<a href="https://github.com/cbail/textnets/" class="uri">https://github.com/cbail/textnets/</a>] package is my recommended resource to conduct text network analysis in R that streamlines all of the above network-theory applications into one framework.</p>
+</div>
+<div id="causality" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Causality</h2>
+<p>The exploration of causal research questions within text data is an exciting methodological direction of likely interest to many social scientists that wish to move away from predominantly descriptive research results. Causality within text engages with two primary types of causal relationships- text as a treatment condition, and text as the outcome of a causal experiment. The first often considers how changing the words exposed to a treatment group compared to a control group leads to variations that can be therefore attributed to differences between the texts. The second instead focuses on how text itself can be used to measure how treatment levels produce divergent group outcomes.</p>
+<p>Causal approaches within text powered by NLP methods can bring new insights to longstanding text data sources within social science research such as open-ended questions in surveys.
+A major concern for designing rigorous causal studies is mitigating the impact of confounding factors that lead to a false interpretation of a causal relationship between treatment and outcome variables. While text has its own unique sources of confounding influences, scholars have defined methods to mitigate confounding factors often through document matching.</p>
+<p>Causal analysis of text data is less driven by specific R libraries or predictive algorithms as much as it by its overarching theory, necessary design requirements, and relevant modeling assumptions. Causal research therefore can be incorporated into the range of previous methods explored within this guide such as topic models and supervised classification.</p>
+</div>
+<div id="ethics-of-nlp" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> Ethics of NLP</h2>
+<p>For all of the excitement around natural language processing both within academic research and as being incorporated into our everyday lives, there is equivalent apprehension regarding the ethics of NLP research and the ability for text-based systems to perpetuate harm and inequality.
+NLP research commonly employs either new or not widely known methods often on equivalently novel text-based domains such as with digital trace data from online platforms. Ethical best practices are therefore still being readily constructed and often include concerns that do not have simple solutions.</p>
+<p>Unfortunately, much of the ethical conversation around NLP-powered research has stem from incidents regarding NLP models that have already actively promoted bias and discrimination. Word embedding methods as highlighted earlier in this chapter are a particularly infamous source as regarding their tendency to perpetuate identity-based stereotypes such as related to gender and occupation or race and criminality.</p>
+<center>
+<div class="figure">
+<img src="images/bias.png" alt="" />
+<p class="caption">Gender and occupation bias within word embeddings identified by Garg et al. 2018</p>
+</div>
+</center>
+<p>Given word embeddings’ eminent role in powering large-scale NLP applications such as search engines and recommendation systems, said biases have already been readily incorporated into NLP-based applications. However, the tendency for NLP models to learn bias has also been used within research to expose underlying inequities reflected within text data and the domains said data is sourced from. Bias in NLP is fundamentally a product of widespread social injustices that models learn through data’s inevitable representation of macro-level social phenomenon. These models are therefore capable of bringing attention to ethical issues within text along with their ability to subsequentially perpetuate said concerns.</p>
+<p>While models themselves can be developed through means that promote unethical outcomes and decisions, there are also more abstract concerns regarding the legitimacy of NLP analysis and text data around participant privacy, consent, and data autonomy. The widespread expansion of publicly available text data does not mean that the creators of said text actively consent to its use by third parties such as academic researchers. Cornell Tech Professor Helen Nissenbaum’s theory of contextual integrity delineates underlying norms regarding how individuals understand privacy towards what information is appropriate to share with various potential recipients that is often minimally considered within text data acquisition. Additionally, NLP applications such as causal methods can manipulate user behavior without their knowledge which may cross boundaries of consent that is commonly asked for when participants actively enroll in traditional experimental studies.</p>
+<p>The ambiguity around established ethical practices within NLP provides all the more incentive to proactively consider potential concerns and viable harm mitigation techniques for one’s specific research interests. Ethics within computational research is the specialty of the Fairness, Accountability, Transparency, and Ethics (FATE) community within computer and information sciences, while a variety of computational social scientists have also been tackling ethical dilemmas in relevant disciplinary journals. These can serve as essential resources for building an informed ethics protocol well-suited for the unique complexities of each research project.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="methodsethics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="future-directions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-methodsethics.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

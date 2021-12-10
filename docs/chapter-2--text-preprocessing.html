@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Chapter 2- Text Preprocessing | Natural Language Processing for the Social Sciences</title>
+  <meta name="description" content="Chapter 8 Chapter 2- Text Preprocessing | Natural Language Processing for the Social Sciences User Guide." />
+  <meta name="generator" content="bookdown 0.24.3 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Chapter 2- Text Preprocessing | Natural Language Processing for the Social Sciences" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="http://ccss-rs/nlp-for-socsci" />
+  
+  <meta property="og:description" content="Chapter 8 Chapter 2- Text Preprocessing | Natural Language Processing for the Social Sciences User Guide." />
+  <meta name="github-repo" content="ccss-rs/nlp-for-socsci" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Chapter 2- Text Preprocessing | Natural Language Processing for the Social Sciences" />
+  
+  <meta name="twitter:description" content="Chapter 8 Chapter 2- Text Preprocessing | Natural Language Processing for the Social Sciences User Guide." />
+  
+
+<meta name="author" content="Remy Stewart" />
+
+
+<meta name="date" content="2021-12-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chapter-1--introduction.html"/>
+<link rel="next" href="chapter-3-dictionaries-sentiment-analysis.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Fundamental Concepts</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#text-as-data"><i class="fa fa-check"></i><b>1.1</b> Text as Data</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#natural-language-processing"><i class="fa fa-check"></i><b>1.2</b> Natural Language Processing</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#computational-social-sciences"><i class="fa fa-check"></i><b>1.3</b> Computational Social Sciences</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#nlp-core-vocabulary"><i class="fa fa-check"></i><b>1.4</b> NLP Core Vocabulary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="textproc.html"><a href="textproc.html"><i class="fa fa-check"></i><b>2</b> Text Preprocessing</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="textproc.html"><a href="textproc.html#character-encoding"><i class="fa fa-check"></i><b>2.1</b> Character Encoding</a></li>
+<li class="chapter" data-level="2.2" data-path="textproc.html"><a href="textproc.html#string-cleaning"><i class="fa fa-check"></i><b>2.2</b> String Cleaning</a></li>
+<li class="chapter" data-level="2.3" data-path="textproc.html"><a href="textproc.html#regular-expressions"><i class="fa fa-check"></i><b>2.3</b> Regular Expressions</a></li>
+<li class="chapter" data-level="2.4" data-path="textproc.html"><a href="textproc.html#lowercasing-concatenation"><i class="fa fa-check"></i><b>2.4</b> Lowercasing &amp; Concatenation</a></li>
+<li class="chapter" data-level="2.5" data-path="textproc.html"><a href="textproc.html#tokenization"><i class="fa fa-check"></i><b>2.5</b> Tokenization</a></li>
+<li class="chapter" data-level="2.6" data-path="textproc.html"><a href="textproc.html#optional-method-dependent-preprocessing-steps"><i class="fa fa-check"></i><b>2.6</b> Optional Method-Dependent Preprocessing Steps</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="textproc.html"><a href="textproc.html#stopwords"><i class="fa fa-check"></i><b>2.6.1</b> Stopwords</a></li>
+<li class="chapter" data-level="2.6.2" data-path="textproc.html"><a href="textproc.html#stemming"><i class="fa fa-check"></i><b>2.6.2</b> Stemming</a></li>
+<li class="chapter" data-level="2.6.3" data-path="textproc.html"><a href="textproc.html#parts-of-speech"><i class="fa fa-check"></i><b>2.6.3</b> Parts-of-Speech</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="dictionary.html"><a href="dictionary.html"><i class="fa fa-check"></i><b>3</b> Dictionaries &amp; Sentiment Analysis</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="dictionary.html"><a href="dictionary.html#types-of-dictionaries"><i class="fa fa-check"></i><b>3.1</b> Types of Dictionaries</a></li>
+<li class="chapter" data-level="3.2" data-path="dictionary.html"><a href="dictionary.html#sentiment-analysis"><i class="fa fa-check"></i><b>3.2</b> Sentiment Analysis</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="dictionary.html"><a href="dictionary.html#vader"><i class="fa fa-check"></i><b>3.2.1</b> VADER</a></li>
+<li class="chapter" data-level="3.2.2" data-path="dictionary.html"><a href="dictionary.html#string-sentiment"><i class="fa fa-check"></i><b>3.2.2</b> String Sentiment</a></li>
+<li class="chapter" data-level="3.2.3" data-path="dictionary.html"><a href="dictionary.html#rnyc-sentiment"><i class="fa fa-check"></i><b>3.2.3</b> r/nyc Sentiment</a></li>
+<li class="chapter" data-level="3.2.4" data-path="dictionary.html"><a href="dictionary.html#sentiment-score"><i class="fa fa-check"></i><b>3.2.4</b> Sentiment &amp; Score</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="dictionary.html"><a href="dictionary.html#beyond-dictionaries"><i class="fa fa-check"></i><b>3.3</b> Beyond Dictionaries</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ml.html"><a href="ml.html"><i class="fa fa-check"></i><b>4</b> Machine Learning &amp; Topic Models</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ml.html"><a href="ml.html#supervised-vs.-unsupervised-learning"><i class="fa fa-check"></i><b>4.1</b> Supervised vs. Unsupervised Learning</a></li>
+<li class="chapter" data-level="4.2" data-path="ml.html"><a href="ml.html#topic-models"><i class="fa fa-check"></i><b>4.2</b> Topic Models</a></li>
+<li class="chapter" data-level="4.3" data-path="ml.html"><a href="ml.html#structural-topic-models"><i class="fa fa-check"></i><b>4.3</b> Structural Topic Models</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="ml.html"><a href="ml.html#preprocessing"><i class="fa fa-check"></i><b>4.3.1</b> Preprocessing</a></li>
+<li class="chapter" data-level="4.3.2" data-path="ml.html"><a href="ml.html#fitting-the-model"><i class="fa fa-check"></i><b>4.3.2</b> Fitting the Model</a></li>
+<li class="chapter" data-level="4.3.3" data-path="ml.html"><a href="ml.html#variation-by-comment-score"><i class="fa fa-check"></i><b>4.3.3</b> Variation by Comment Score</a></li>
+<li class="chapter" data-level="4.3.4" data-path="ml.html"><a href="ml.html#extending-machine-learning"><i class="fa fa-check"></i><b>4.3.4</b> Extending Machine Learning</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="methodsethics.html"><a href="methodsethics.html"><i class="fa fa-check"></i><b>5</b> Additional Methods &amp; Ethical Considerations</a></li>
+<li class="chapter" data-level="6" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>6</b> References</a></li>
+<li class="chapter" data-level="7" data-path="chapter-1--introduction.html"><a href="chapter-1--introduction.html"><i class="fa fa-check"></i><b>7</b> Chapter 1- Introduction</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="chapter-1--introduction.html"><a href="chapter-1--introduction.html#data-and-the-information-age"><i class="fa fa-check"></i><b>7.1</b> Data and the Information Age</a></li>
+<li class="chapter" data-level="7.2" data-path="chapter-1--introduction.html"><a href="chapter-1--introduction.html#css-and-nlp"><i class="fa fa-check"></i><b>7.2</b> CSS and NLP</a></li>
+<li class="chapter" data-level="7.3" data-path="chapter-1--introduction.html"><a href="chapter-1--introduction.html#nlp-resources-specific-to-r-applications"><i class="fa fa-check"></i><b>7.3</b> NLP Resources Specific to R Applications</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chapter-2--text-preprocessing.html"><a href="chapter-2--text-preprocessing.html"><i class="fa fa-check"></i><b>8</b> Chapter 2- Text Preprocessing</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="chapter-2--text-preprocessing.html"><a href="chapter-2--text-preprocessing.html#text-preprocessing"><i class="fa fa-check"></i><b>8.1</b> Text Preprocessing</a></li>
+<li class="chapter" data-level="8.2" data-path="chapter-2--text-preprocessing.html"><a href="chapter-2--text-preprocessing.html#stemming-stopwords-and-parts-of-speech"><i class="fa fa-check"></i><b>8.2</b> Stemming, Stopwords, and Parts of Speech</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html"><i class="fa fa-check"></i><b>9</b> Chapter 3 – Dictionaries &amp; Sentiment Analysis</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#counts-dictionary-based-studies"><i class="fa fa-check"></i><b>9.1</b> Counts &amp; Dictionary Based Studies</a></li>
+<li class="chapter" data-level="9.2" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#liwc"><i class="fa fa-check"></i><b>9.2</b> LIWC</a></li>
+<li class="chapter" data-level="9.3" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#sentiment-analysis-1"><i class="fa fa-check"></i><b>9.3</b> Sentiment Analysis</a></li>
+<li class="chapter" data-level="9.4" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#vader-1"><i class="fa fa-check"></i><b>9.4</b> VADER</a></li>
+<li class="chapter" data-level="9.5" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#alternative-sentiment-analysis-approaches"><i class="fa fa-check"></i><b>9.5</b> Alternative Sentiment Analysis Approaches</a></li>
+<li class="chapter" data-level="9.6" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#machine-learning-for-social-science-annual-reviews"><i class="fa fa-check"></i><b>9.6</b> Machine Learning for Social Science Annual Reviews</a></li>
+<li class="chapter" data-level="9.7" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#topic-model-papers"><i class="fa fa-check"></i><b>9.7</b> Topic Model Papers</a></li>
+<li class="chapter" data-level="9.8" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#structural-topic-models-author-papers"><i class="fa fa-check"></i><b>9.8</b> Structural Topic Models Author Papers</a></li>
+<li class="chapter" data-level="9.9" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#css-research-using-topic-models"><i class="fa fa-check"></i><b>9.9</b> CSS Research Using Topic Models</a></li>
+<li class="chapter" data-level="9.10" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#further-applications"><i class="fa fa-check"></i><b>9.10</b> Further Applications</a>
+<ul>
+<li class="chapter" data-level="9.10.1" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#word-embeddings"><i class="fa fa-check"></i><b>9.10.1</b> Word Embeddings</a></li>
+<li class="chapter" data-level="9.10.2" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#supervised-nlp-classification-applied-studies"><i class="fa fa-check"></i><b>9.10.2</b> Supervised NLP Classification Applied Studies</a></li>
+<li class="chapter" data-level="9.10.3" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#networks"><i class="fa fa-check"></i><b>9.10.3</b> Networks</a></li>
+<li class="chapter" data-level="9.10.4" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#casual-inference"><i class="fa fa-check"></i><b>9.10.4</b> Casual Inference</a></li>
+</ul></li>
+<li class="chapter" data-level="9.11" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#ethics-within-nlp"><i class="fa fa-check"></i><b>9.11</b> Ethics within NLP</a>
+<ul>
+<li class="chapter" data-level="9.11.1" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#broad-social-implications-of-nlp"><i class="fa fa-check"></i><b>9.11.1</b> Broad Social Implications of NLP</a></li>
+<li class="chapter" data-level="9.11.2" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#nlps-perpetuation-of-bias-and-unethical-practices"><i class="fa fa-check"></i><b>9.11.2</b> NLP’s Perpetuation of Bias and Unethical Practices</a></li>
+<li class="chapter" data-level="9.11.3" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#nlps-revealing-of-bias-and-unethical-practices"><i class="fa fa-check"></i><b>9.11.3</b> NLP’s Revealing of Bias and Unethical Practices</a></li>
+<li class="chapter" data-level="9.11.4" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#participant-privacy-consent-and-agency"><i class="fa fa-check"></i><b>9.11.4</b> Participant Privacy, Consent, and Agency</a></li>
+<li class="chapter" data-level="9.11.5" data-path="chapter-3-dictionaries-sentiment-analysis.html"><a href="chapter-3-dictionaries-sentiment-analysis.html#incorporating-ethical-practices-within-nlp"><i class="fa fa-check"></i><b>9.11.5</b> Incorporating Ethical Practices Within NLP</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Natural Language Processing for the Social Sciences</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chapter-2--text-preprocessing" class="section level1" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Chapter 2- Text Preprocessing</h1>
+<div id="text-preprocessing" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Text Preprocessing</h2>
+<ul>
+<li>Helpful blog post on encodings- <a href="https://kunststube.net/encoding/" class="uri">https://kunststube.net/encoding/</a></li>
+<li>Uysal, A. K., and Gunal, S. 2014. “The Impact of Preprocessing on Text Classification.” <em>Information Processing &amp; Management</em> 50(1), 104-112.</li>
+<li>Denny, M. J., and Spirling, A. (2018). “Text Preprocessing For Unsupervised Learning: Why It Matters, When It Misleads, And What To Do About It.” <em>Political Analysis</em> 26(2): 168–189.</li>
+<li>Hickman, Louis, Stuti Thapa, … et al. 2020. “Text Preprocessing for Text Mining in Organizational Research: Review and Recommendations.” <em>Organizational Research Methods</em>: 1-33.</li>
+</ul>
+</div>
+<div id="stemming-stopwords-and-parts-of-speech" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Stemming, Stopwords, and Parts of Speech</h2>
+<ul>
+<li>Derczynski, Leon, Alan Ritter, Sam Clark, and Kalina Bontcheva. 2013. “Twitter Part-of-Speech Tagging for All: Overcoming Sparse and Noisy Data.” <em>Proceedings of Recent Advances in Natural Language Processing</em>: 198-206.</li>
+<li>Tsuboi, Yuta. 2014. “Neural Networks Leverage Corpus-wide Information for Part-of-Speech Tagging.” <em>Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing</em>: 938-950.</li>
+<li>Schofield, A., and Mimno, D. 2016. “Comparing Apples to Apple: The Effects of Stemmers on Topic Models.” <em>TACL</em> 4(2): 287–300.</li>
+<li>Singh, Jasmeet and Vishal Gupta. 2017. “A Systematic Review of Text Stemming Techniques.” <em>Artificial Intelligence Review</em> 48: 157-217.</li>
+<li>Schofield, Alexandra, Måns Magnusson, and David Mimno. 2017. “Pulling Out the Stops: Rethinking Stopword Removal for Topic Models.” <em>Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics</em>: 432-436.</li>
+</ul>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chapter-1--introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chapter-3-dictionaries-sentiment-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/06-references.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
