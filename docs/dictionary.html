@@ -295,26 +295,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">3.2.2</span> String Sentiment</h3>
 <p>Let’s consider examples of individual strings to hone our intuition regarding how VADER generates its sentiment scores. The get_vader() function is our tool of choice to produce individual string scores which I apply to three examples as follows.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="dictionary.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_vader</span>(<span class="st">&quot;As someone who always depended on cars before, I LOVE the subway! &lt;3&quot;</span>)</span></code></pre></div>
-<pre><code>##                                     word_scores                                        compound 
-## &quot;{0, 0, 0, 0, 0, 0, 0, 0, 0, 3.933, 0, 0, 1.9}&quot;                                         &quot;0.845&quot; 
-##                                             pos                                             neu 
-##                                         &quot;0.425&quot;                                         &quot;0.575&quot; 
-##                                             neg                                       but_count 
-##                                             &quot;0&quot;                                             &quot;0&quot;</code></pre>
+<pre><code>##                                     word_scores                                        compound                                             pos 
+## &quot;{0, 0, 0, 0, 0, 0, 0, 0, 0, 3.933, 0, 0, 1.9}&quot;                                         &quot;0.845&quot;                                         &quot;0.425&quot; 
+##                                             neu                                             neg                                       but_count 
+##                                         &quot;0.575&quot;                                             &quot;0&quot;                                             &quot;0&quot;</code></pre>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="dictionary.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_vader</span>(<span class="st">&quot;The subway is very helpful, but I&#39;m not a fan of the rats.&quot;</span>)</span></code></pre></div>
-<pre><code>##                                         word_scores                                            compound 
-## &quot;{0, 0, 0, 0, 1.0465, 0, 0, 0, 0, -1.443, 0, 0, 0}&quot;                                            &quot;-0.102&quot; 
-##                                                 pos                                                 neu 
-##                                             &quot;0.132&quot;                                              &quot;0.71&quot; 
-##                                                 neg                                           but_count 
-##                                             &quot;0.158&quot;                                                 &quot;1&quot;</code></pre>
+<pre><code>##                                         word_scores                                            compound                                                 pos 
+## &quot;{0, 0, 0, 0, 1.0465, 0, 0, 0, 0, -1.443, 0, 0, 0}&quot;                                            &quot;-0.102&quot;                                             &quot;0.132&quot; 
+##                                                 neu                                                 neg                                           but_count 
+##                                              &quot;0.71&quot;                                             &quot;0.158&quot;                                                 &quot;1&quot;</code></pre>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="dictionary.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_vader</span>(<span class="st">&quot;I hate how delayed the subway always is… being late for work sucks. :(&quot;</span>)</span></code></pre></div>
-<pre><code>##                                              word_scores                                                 compound 
-## &quot;{0, -2.7, 0, -0.9, 0, 0, 0, 0, 0, 0, 0, 0, -1.5, -1.9}&quot;                                                 &quot;-0.875&quot; 
-##                                                      pos                                                      neu 
-##                                                      &quot;0&quot;                                                  &quot;0.476&quot; 
-##                                                      neg                                                but_count 
-##                                                  &quot;0.524&quot;                                                      &quot;0&quot;</code></pre>
+<pre><code>##                                              word_scores                                                 compound                                                      pos 
+## &quot;{0, -2.7, 0, -0.9, 0, 0, 0, 0, 0, 0, 0, 0, -1.5, -1.9}&quot;                                                 &quot;-0.875&quot;                                                      &quot;0&quot; 
+##                                                      neu                                                      neg                                                but_count 
+##                                                  &quot;0.476&quot;                                                  &quot;0.524&quot;                                                      &quot;0&quot;</code></pre>
 <p>Each get_vader call generates both the individual scores of each word accounting for its polarity and valence, as well as the four overarching sentiment scores of each string. The first string is strongly positive and is shown to account for both the capitalization of “love” and the heart emoticon. The second string has both a positive connotation through “helpful” but also a negative tone with “not a fan,” leading to a weakly negative compound score. The final string is accurately identified as strongly negative and successfully captures the intention behind the sad face emoticon.</p>
 <p>Given our validation of VADER’s classification scheme to text very similar to our r/nyc comments, let’s go ahead and create a data frame of the VADER metrics of each of our comments through the vader_df() function. This can take some time to run given our dataset size and your computing resources. I’ve therefore included a “nyc_sentiment.csv” file of these scores pre-generated in the data file of the Github if you’d like to load in the sentiment scores directly instead.</p>
 </div>
@@ -339,13 +333,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb24-2"><a href="dictionary.html#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">top_n</span>(<span class="sc">-</span><span class="dv">5</span>, compound)</span>
 <span id="cb24-3"><a href="dictionary.html#cb24-3" aria-hidden="true" tabindex="-1"></a>top_neg</span></code></pre></div>
 <pre><code>## # A tibble: 5 × 6
-##    ...1 body                                                                                            compound   neg   neu   pos
-##   &lt;dbl&gt; &lt;chr&gt;                                                                                              &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1 16952 &quot;But they were tested on fetal cells while researching very specific conditions.\n\nThe idea t…   -0.992 0.351 0.649 0    
-## 2 19203 &quot;Last I checked racists ideas lead to racist actions and racist actions leads to racist being …   -0.994 0.421 0.539 0.04 
-## 3 21477 &quot;seeing criminals being executed in death penalty has an effect to people mind who are about t…   -0.996 0.455 0.545 0    
-## 4 35037 &quot;NYC&#39;s murder rate is around 5.3 per 100,000\n\nFlorida&#39;s murder rate is 5.2\n\nTexas murder r…   -0.992 0.383 0.566 0.051
-## 5 41496 &quot;In NY, 66% of prisoners are in for violent crimes\n\n\&quot;Violent crimes\&quot; is a category that co…   -0.992 0.414 0.544 0.042</code></pre>
+##    ...1 body                                                                                                                                      compound   neg   neu   pos
+##   &lt;dbl&gt; &lt;chr&gt;                                                                                                                                        &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 16952 &quot;But they were tested on fetal cells while researching very specific conditions.\n\nThe idea that someone shouldn’t use ibuprofen for a …   -0.992 0.351 0.649 0    
+## 2 19203 &quot;Last I checked racists ideas lead to racist actions and racist actions leads to racist being elected and writing racist bills/amendment…   -0.994 0.421 0.539 0.04 
+## 3 21477 &quot;seeing criminals being executed in death penalty has an effect to people mind who are about to do heinous crimes. do you think people w…   -0.996 0.455 0.545 0    
+## 4 35037 &quot;NYC&#39;s murder rate is around 5.3 per 100,000\n\nFlorida&#39;s murder rate is 5.2\n\nTexas murder rate is 4.9\n\nAlternatively Hawaii&#39;s murde…   -0.992 0.383 0.566 0.051
+## 5 41496 &quot;In NY, 66% of prisoners are in for violent crimes\n\n\&quot;Violent crimes\&quot; is a category that covers everything from Murder to Weapons cha…   -0.992 0.414 0.544 0.042</code></pre>
 <p>I’ll skip reading through the details of the most negative comments due to their often disturbing content, but skimming the text lines gives a rather clear picture towards the themes they’re discussing. The fact that these are the most negatively associated comments reflects VADER’s ability to catch the negative emotional valence of text related to violence and discrimination quite effectively.</p>
 </div>
 <div id="sentiment-score" class="section level3" number="3.2.4">

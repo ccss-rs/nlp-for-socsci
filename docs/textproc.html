@@ -272,18 +272,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Our 1 confidence score on the UTF-8 encoding for the text column of our data frame gives us assurance that the following preprocessing methods should work without issues around character encoding. Let’s now inspect our data set in more detail.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="textproc.html#cb4-1" aria-hidden="true" tabindex="-1"></a>nyc </span></code></pre></div>
 <pre><code>## # A tibble: 100,000 × 5
-##        id author               body                                                                                   score date  
-##     &lt;dbl&gt; &lt;chr&gt;                &lt;chr&gt;                                                                                  &lt;dbl&gt; &lt;chr&gt; 
-##  1   2666 chillwavexyx         &quot;Not just my experience, unfortunately. Very hard to take them on their word after wh…     1 11/4/…
-##  2  30225 MG7444               &quot;Was Joe Biden disciplined? AOC? Any of the Democrats who are routinely photographed …   -10 10/21…
-##  3  85724 robswins             &quot;Imagine if cities actually used police like this. There are dozens of places I see w…    27 9/20/…
-##  4  13927 nydutch              &quot;No, it really, really is not. I don&#39;t see any hoookers pissing in the middle of 42nd…     1 10/30…
-##  5 117584 kittygirl9891        &quot;I&#39;m so worried about my car. It&#39;s parked in a basement garage. 😭&quot;                        7 9/2/21
-##  6 100790 Darrkman             &quot;Oh lord. \n\nI bet you&#39;re 30 yrs old at the oldest. \n\nDude I&#39;m not gonna explain t…     1 9/10/…
-##  7  69805 Solagnas             &quot;You inferred wrong, idk what to tell you man. Its efficacy is what it is, it&#39;s not m…    -2 9/28/…
-##  8 138396 TheNormalAlternative &quot;Last I checked, this bridge was 30 miles north of NYC.&quot;                                  -6 8/20/…
-##  9 125491 couchTomatoe         &quot;Yes, I said that. Every corner.&quot;                                                          2 8/27/…
-## 10  96017 twelvydubs           &quot;Earlier in the year we already extended WFH to early 2022. Now it&#39;s been extended ev…    19 9/13/…
+##        id author               body                                                                                                                            score date   
+##     &lt;dbl&gt; &lt;chr&gt;                &lt;chr&gt;                                                                                                                           &lt;dbl&gt; &lt;chr&gt;  
+##  1   2666 chillwavexyx         &quot;Not just my experience, unfortunately. Very hard to take them on their word after what they did to me and millions of others.…     1 11/4/21
+##  2  30225 MG7444               &quot;Was Joe Biden disciplined? AOC? Any of the Democrats who are routinely photographed and video taped without masks?&quot;              -10 10/21/…
+##  3  85724 robswins             &quot;Imagine if cities actually used police like this. There are dozens of places I see where people dangerously break traffic law…    27 9/20/21
+##  4  13927 nydutch              &quot;No, it really, really is not. I don&#39;t see any hoookers pissing in the middle of 42nd st.&quot;                                          1 10/30/…
+##  5 117584 kittygirl9891        &quot;I&#39;m so worried about my car. It&#39;s parked in a basement garage. 😭&quot;                                                                 7 9/2/21 
+##  6 100790 Darrkman             &quot;Oh lord. \n\nI bet you&#39;re 30 yrs old at the oldest. \n\nDude I&#39;m not gonna explain to you about Adams and stop and frisk but …     1 9/10/21
+##  7  69805 Solagnas             &quot;You inferred wrong, idk what to tell you man. Its efficacy is what it is, it&#39;s not more or less effective just because the va…    -2 9/28/21
+##  8 138396 TheNormalAlternative &quot;Last I checked, this bridge was 30 miles north of NYC.&quot;                                                                           -6 8/20/21
+##  9 125491 couchTomatoe         &quot;Yes, I said that. Every corner.&quot;                                                                                                   2 8/27/21
+## 10  96017 twelvydubs           &quot;Earlier in the year we already extended WFH to early 2022. Now it&#39;s been extended even deeper into 2022, I&#39;m talking late spr…    19 9/13/21
 ## # … with 99,990 more rows</code></pre>
 <p>This provides us with the first 10 records of our data set. “id” is the unique identifier for each individual comment, “author” provides the Reddit username who wrote the comment, “body” features the text of the comment itself, “score” refers to the Reddit system of being able to “upvote” or “downvote” comments similar to a like/dislike framework, and “date” as the year, month, and day the comment was posted. Our preprocessing will focus on “body” as the main text feature of our data.</p>
 </div>
