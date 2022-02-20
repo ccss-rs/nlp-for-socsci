@@ -9,7 +9,7 @@ string-cleaning
 regular-expressions
 lowercasing-concatenation
 tokenization
-optional-method-dependent-preprocessing-steps
+optional-method-dependent-pre-processing-steps
 stopwords
 stemming
 parts-of-speech
@@ -25,7 +25,7 @@ ml
 supervised-vs.-unsupervised-learning
 topic-models
 structural-topic-models
-preprocessing
+pre-processing
 fitting-the-model
 variation-by-comment-score
 extending-machine-learning

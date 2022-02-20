@@ -1,0 +1,14 @@
+name: nlp_101_preprocessing_demo
+title: nlp_101_preprocessing_demo
+username:
+account: remypstewart
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5524513
+bundleId: 5515040
+url: https://remypstewart.shinyapps.io/nlp_101_preprocessing_demo/
+when: 1643300264.34209
+lastSyncTime: 1643300264.34211
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: _bookdown.yml|_build.sh|_deploy.sh|_output.yml|_publish.R|.nojekyll|.RData|01-intro.Rmd|02-textproc.Rmd|03-dictionary.Rmd|04-ml.Rmd|05-methodsethics.Rmd|06-references.Rmd|404.html|book.bib|DESCRIPTION|Dockerfile|english-ewt-ud-2.5-191206.udpipe|index.Rmd|LICENSE|now.json|nyc_reddit.csv|nyc_reddita_data.csv|nyc_sentiment.csv|nyc_STM.RData|packages.bib|preamble.tex|README.md|style.css|toc.css|_bookdown_files|docs|images|libs

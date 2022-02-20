@@ -1,6 +1,6 @@
 # References {#references}
 
-This reference list is divided by each of the user guide’s chapters along with subheaders for the connecting theme between each group of citations. I decided to order each cluster descending by year since NLP is such a rapidly growing discipline and starting with older works will likely aid reader’s understanding of newer innovations. The featured references undeniably reflect my own disciplinary training biases in sociology & information science, but I think social scientists outside of either of those specific disciplines can still gain much from the included papers.
+This reference list is divided by each of the user guide’s chapters along with subheaders for the connecting theme between each group of citations. I decided to order each cluster descending by year since NLP is a rapidly growing discipline and starting with older works will likely aid reader’s understanding of newer innovations. The featured references undeniably reflect my own disciplinary training biases in sociology & information science, but I think social scientists outside of either of those specific disciplines can still gain much from the included papers.
 
 I purposely tried to highlight Cornell scholars and researchers throughout the sections. There’s no way I could include the sheer variety of research without this list becoming massive, so consider this to be a further reading “launch pad” aligned with the introduced topics in the user guide that you can then expand on further within your own literature reviews. 
 
@@ -30,7 +30,7 @@ I purposely tried to highlight Cornell scholars and researchers throughout the s
 ### Text Preprocessing
 * Helpful blog post on encodings- https://kunststube.net/encoding/
 * Uysal, A. K., and Gunal, S. 2014. "The Impact of Preprocessing on Text Classification." *Information Processing & Management* 50(1), 104-112.
-* Denny, M. J., and Spirling, A. (2018). “Text Preprocessing For Unsupervised Learning: Why It Matters, When It Misleads, And What To Do About It.” *Political Analysis* 26(2): 168–189.
+* Denny, M. J., and Spirling, A. 2018. “Text Preprocessing For Unsupervised Learning: Why It Matters, When It Misleads, And What To Do About It.” *Political Analysis* 26(2): 168–189.
 * Hickman, Louis, Stuti Thapa, … et al. 2020. “Text Preprocessing for Text Mining in Organizational Research: Review and Recommendations.” *Organizational Research Methods*: 1-33. 
 * Great website to learn regexes- https://www.regular-expressions.info/
 

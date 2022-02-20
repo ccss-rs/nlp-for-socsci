@@ -1,14 +1,14 @@
-# Text Preprocessing {#textproc}
+# Text Pre-processing {#textproc}
 
 Preparing text data for NLP analysis presents unique challenges. Text can vary significantly in its degree of raw “messiness” compared to other common data types depending on where it was sourced from, what types of information the text commonly expresses, and what unwanted components within the text may be present. 
 
-*Text preprocessing* refers to a variety of techniques used to prepare text data into a form ready for analysis. Applicable preprocessing steps are therefore highly dependent on both the data set and your intended NLP methods. Some preprocessing strategies are for specific use cases, while there’s a general set of recurring techniques often required for NLP applications. 
+*Text pre-processing* refers to a variety of techniques used to prepare text data into a form ready for analysis. Applicable pre-processing steps are therefore highly dependent on both the data set and your intended NLP methods. Some pre-processing strategies are for specific use cases, while there’s a general set of recurring techniques often required for NLP applications. 
 
-NLP research findings are often heavily influenced by previous choices made within the research workflow, and text preprocessing decisions are one of the biggest contributors to this variability. How you decide to prepare text data can lead to significant variations in results further within your research. I will therefore provide an overview of a wide range of preprocessing options and encourage you to test out a variety of these for your specific use cases. This is key to ensure the robustness of your findings to various text specifications and will strengthen the rigor of your research overall. 
+NLP research findings are often heavily influenced by previous choices made within the research workflow, and text pre-processing decisions are one of the biggest contributors to this variability. How you decide to prepare text data can lead to significant variations in results further within your research. I will therefore provide an overview of a wide range of pre-processing options and encourage you to test out a variety of these for your specific use cases. This is key to ensure the robustness of your findings to various text specifications and will strengthen the rigor of your research overall. 
 
 This demo focuses on four of my go-to R packages for NLP research that all stem from the *tidyverse* collection by Hadley Wickham and the team at R Studio. These packages are designed to be simple to implement and to build from each other for various tasks relevant to data preparation. **readr** facilitates the easy uploading of external data files such as CSVs into R while **dplyr** promotes streamlined data frame creation and manipulation from said files. **stringr** is all about working with character strings which is the data type that text falls under. **tidytext** provides more specialized functions to prepare text data for various NLP use cases.
 
-I’ll go ahead and load all of these packages into our working session under the assumption that you've installed them into your local machine through the install.packages() command. I'll also read in our r/nyc data set from the provided CSV file sourced from this guide's Github repository. I recommend that you create a folder on your computer that holds both the CSV data and a saved R file titled “text_preprocessing.R” in one location.
+I’ll go ahead and load all of these packages into our working session under the assumption that you've installed them into your local machine through the install.packages() command. I'll also read in our r/nyc data set from the provided CSV file sourced from this guide's [Github repository](https://github.com/ccss-rs/nlp-for-socsci). I recommend that you create a folder on your computer that holds both the CSV data and a saved R file titled “text_preprocessing.R” in one location.
   
 ```{r, results=FALSE, message=FALSE}
 library(readr)
@@ -16,36 +16,35 @@ library(dplyr)
 library(stringr)
 library(tidytext)
 
-## EDIT THIS PATH FOR FINAL GUIDE LAUNCH
-nyc <- read_csv("nyc_reddit.csv")
+nyc <- read_csv("nyc_reddit_data.csv")
 ```
 
 ## Character Encoding
 
-*Character encoding* refers to numerical codes designed for programs to know how to display a text character. Particularly messy text sources such as website scrapes can lead to data sets that follow different types of character encoding schemes. This can create issues for reading in and manipulating text within a given program and/or method. Most English text data is used with either Unicode/UTF-8 or ASCII encoding, and we can check if our data set of r/nyc comments follows one of these encoding schemas after loading in our data. 
+*Character encoding* refers to numerical codes designed for programs to know how to display a text character. Particularly messy text sources such as website scrapes can lead to data sets that follow different types of character encoding schemas. This can create issues for reading in and manipulating text within a given program and/or method. Most English text data is used with either Unicode/UTF-8 or ASCII encoding, and we can check if our data set of r/nyc comments follows one of these encoding schemas after loading in our data. 
 
 ```{r}
 guess_encoding(nyc$body)
 ```
-Our 1 confidence score on the UTF-8 encoding for the text column of our data frame gives us assurance that the following preprocessing methods should work without issues around character encoding. Let’s now inspect our data set in more detail. 
+Our 1 confidence score on the UTF-8 encoding for the text column of our data frame gives us assurance that the following pre-processing methods should work without issues around character encoding. Let’s now inspect our data set in more detail. 
 
 ```{r}
 nyc 
 ```
 
-This provides us with the first 10 records of our data set. “id” is the unique identifier for each individual comment, “author” provides the Reddit username who wrote the comment, “body” features the text of the comment itself, “score” refers to the Reddit system of being able to “upvote” or “downvote” comments similar to a like/dislike framework, and “date” as the year, month, and day the comment was posted. Our preprocessing will focus on “body” as the main text feature of our data. 
+This provides us with the first 10 records of our data set. “id” is the unique identifier for each individual comment, “body” features the text of the comment itself, and “score” refers to the Reddit system of being able to “upvote” or “downvote” comments similar to a like/dislike framework. Our pre-processing will focus on “body” as the main text feature of our data. 
 
 ##  String Cleaning
 
-String manipulation is key to virtually any form of text data cleaning a to remove unwanted noise within text and represent a given document in a more interpretable form. This is where functions in the stringr package particularly shine. 
+String manipulation is key to virtually any form of text data cleaning to remove unwanted noise within text and represent a given document in a more interpretable form. This is where functions in the stringr package particularly shine. 
 
-Let’s first consider one semantically meaningless token found throughout our data set- “\n”. This represents line breaks within HTML web syntax that were captured as a by-product of scraping our Reddit comments. We can use stringr’s str_remove_all function to strip out all instances of \n directly from the comment text. 
+Let’s first consider one semantically meaningless token found throughout our data set- “`\n`”. This represents line breaks within HTML web syntax that were captured as a by-product of scraping our Reddit comments. We can use stringr’s str_remove_all function to strip out all instances of `\n` directly from the comment text. 
 
 ```{r}
 nyc$body <- str_remove_all(nyc$body, "\n")
 ```
 
-This successfully removes all instances of “\n”. There are a variety of additional components of text data that a user may want to remove depending on their intended NLP use case. For example, deleting all punctuation is commonly desired within NLP methods since punctuation may be otherwise be tokenized as their own words. Our previous method is great at removing any exact match with “\n” within the comments, but a more streamlined technique to remove any undesired character type would save us much more time and code lines then individually having to identify every type of punctuation we'd like to remove.
+This successfully removes all instances of “`\n`”. There are a variety of additional components of text data that a user may want to remove depending on their intended NLP use case. For example, deleting all punctuation is commonly desired within NLP methods since punctuation may be otherwise be tokenized as their own words. Our previous method is great at removing any exact match with “`\n`” within the comments, but a more streamlined technique to remove any undesired character type would save us much more time and code lines then individually having to identify every type of punctuation we'd like to remove.
 
 ## Regular Expressions
 
@@ -59,7 +58,7 @@ nyc$body <- str_remove_all(nyc$body, '[:punct:]')
 
 ## Lowercasing & Concatenation
 
-It’s common within text preprocessing to convert all words to lowercase since capitalization may lead a given NLP method to consider the same words as separate entities based on casing alone. You may also consider explicitly combining n-grams into single word units, such as concatenating all instances of the bi-gram “New York” into the single token of “New_York”. This isn’t as commonly used within NLP as lowercasing is, but there’s certain use cases where having n-grams connected with each other can be key to your research interests. The stringr-based techniques for lowercasing and concatenating are respectively follows:
+It’s common within text pre-processing to convert all words to lowercase since capitalization may lead a given NLP method to consider the same words as separate entities based on casing alone. You may also consider explicitly combining n-grams into single word units, such as concatenating all instances of the bi-gram “New York” into the single token of “New_York”. This isn’t as commonly used within NLP as lowercasing is, but there’s certain use cases where having n-grams connected with each other can be key to your research interests. The stringr-based techniques for lowercasing and concatenating are respectively as follows:
 
 ```{r}
 nyc$body <- str_to_lower(nyc$body)
@@ -68,7 +67,7 @@ nyc$body <- str_replace_all(nyc$body, "New York", "New_York")
 
 ## Tokenization
 
-*Tokenization* as mentioned in this guide’s first chapter refers to the segmentation of text components into unit such as individual words, sentences, paragraphs, characters, or n-grams. While the best type of tokenization to use is highly dependent on your research questions and planned analyses, the most common tokenization units overall are individual words. I therefore employ tidytext’s unnest_tokens method to create a separate data frame with a designated row for each individual word within a r/nyc comment. The “word” argument specifies individual words as our tokenization unit. 
+*Tokenization* as mentioned in this guide’s first chapter refers to the segmentation of text components into units such as individual words, sentences, paragraphs, characters, or n-grams. While the best type of tokenization to use is highly dependent on your research questions and planned analyses, the most common tokenization units overall are individual words. I therefore employ tidytext’s unnest_tokens method to create a separate data frame with a designated row for each individual word within a r/nyc comment. The “word” argument specifies individual words as our tokenization unit. 
 
 ```{r}
 tokens <- nyc %>%
@@ -77,15 +76,15 @@ tokens <- nyc %>%
 
 Our 100,000 original comments are now almost 3.5 million rows of individual word tokens. By default, unnest_tokens lowercases the tokens and removes punctuation from the original string. This allows you to skip stringr’s to_lower and having to use a punctuation removal regex if you’re also planning on tokenizing your text data through tidytext. 
 
-## Optional Method-Dependent Preprocessing Steps 
+## Optional Method-Dependent Pre-processing Steps 
 
-There’s a variety of additional preprocessing techniques you may consider for your specific NLP research interests beyond the previously specified methods. These include stopword removal, stemming, and parts-of-speech tagging. These techniques are overall more case-by-base in their usefulness than string manipulation and tokenization are as core preprocessing steps. Even methods where techniques such as stopword removal or lemmatization are common, there is ongoing debates within the NLP community regarding whether said methods are helpful or appropriate. However, certain methods can be significantly aided by the right use of these preprocessing steps. It’s often best to see if your results change either with or without a given preprocessing technique, and if they do consider said differences in the interpretation of your overall research findings. 
+There’s a variety of additional pre-processing techniques you may consider for your specific NLP research interests beyond the previously specified methods. These include stopword removal, stemming, and parts-of-speech tagging. These techniques are overall more case-by-case in their usefulness than string manipulation and tokenization are as core pre-processing steps. Even methods where techniques such as stopword removal or lemmatization are common, there is ongoing debates within the NLP community regarding whether said methods are helpful or appropriate. However, certain methods can be significantly aided by the right use of these pre-processing steps. It’s often best to see if your results change either with or without a given pre-processing technique, and if they do consider said differences in the interpretation of your overall research findings. 
 
 ### Stopwords
 
-*Stopwords* is the term for common words such as “the”, “but”, and “is” that are often understood as contextually irrelevant for the purposes of a given NLP analysis. Stop word removal is particularly helpful for when you’d like to focus on unique and/or subject-specific words that often carry more in-depth meaning than more common phrases. Topic models are one NLP method we’ll be exploring later in this guide where stop word removal is quite common, as the model is primarily used to discover conceptually deeper themes within text than what semantically generic words indicate. However, other use cases such as exploring how two communities differ in conversational styles may be better served by keeping stop words, since even common words can allude to meaningful differences between groups. 
+*Stopwords* is the term for common words such as “the”, “but”, and “is” that are often understood as contextually irrelevant for the purposes of a given NLP analysis. Stopword removal is particularly helpful for when you’d like to focus on unique and/or subject-specific words that often carry more in-depth meaning than more common phrases. Topic models are one NLP method we’ll be exploring later in this guide where stopword removal is quite common, as the model is primarily used to discover conceptually deeper themes within text than what semantically generic words indicate. However, other use cases such as exploring how two communities differ in conversational styles may be better served by keeping stop words, since even common words can allude to meaningful differences between groups. 
 
-If stop word removal seems relevant to your given research question, tidytext actually provides an established data set of common English stopwords for you to remove from your tokenized text. This is achieved through an *anti-join* of your own data and the stopwords data frame, which builds from query-language data merging principles to not include words that match both data sets. It’s also important to note that this pre-specified set of stopwords may not entirely translate to other common and conceptually less meaningful words within your own data. It’s therefore common to add terms to an initial list and perform additional stopword removal through techniques such as the previously delineated str_remove_all. 
+If stopword removal seems relevant to your given research question, tidytext actually provides an established data set of common English stopwords for you to remove from your tokenized text. This is achieved through an *anti-join* of your own data and the stopwords data frame, which builds from query-language data merging principles to not include words that match both data sets. It’s also important to note that this pre-specified set of stopwords may not entirely translate to other common and conceptually less meaningful words within your own data. It’s therefore common to add terms to an initial list and perform additional stopword removal through techniques such as the previously delineated str_remove_all. 
 
 ```{r, results=FALSE, message=FALSE}
 data(stop_words)

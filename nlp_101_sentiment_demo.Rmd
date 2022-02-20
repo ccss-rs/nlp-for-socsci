@@ -1,0 +1,59 @@
+---
+title: "Summarise Tables"
+output: 
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+runtime: shiny_prerendered
+description: >
+  Learn core commands for text pre-processing.
+---
+
+In this demo, we'll be performing exploratory analysis on the expressed emotional 
+sentiment of r/nyc users as embedded within their comment text. We will use readr, 
+dplylr, and stringr once again as these packages are core libraries
+across NLP use cases. We're also including the **vader** package which wraps the original 
+VADER sentiment analyser written in Python for R as well as **ggplot** for simple
+data visualizations. Let's load them all in along with our r/nyc comment data set as follows: 
+
+library(readr)
+library(dplyr)
+library(stringr)
+library(vader)
+library(ggplot2)
+
+nyc <- read_csv("nyc_reddit.csv")
+
+get_vader("As someone who always depended on cars before, I LOVE the subway! <3")
+
+
+get_vader("The subway is very helpful, but I'm not a fan of the rats.")
+
+get_vader("I hate how delayed the subway always is… being late for work sucks. :(")
+
+nyc_sentiment <- vader_df(nyc$body)
+nyc_sentiment
+
+nyc_sentiment <- read_csv('nyc_sentiment.csv')
+
+top_pos <- nyc_sentiment %>%
+    top_n(5, compound)
+top_pos$body
+
+top_neg <- nyc_sentiment %>%
+    top_n(-5, compound)
+top_neg
+
+nyc_full <- merge(nyc, nyc_sentiment, by = "body")
+
+To prepare for this analysis, I’ll first have to join my separate data frames of 
+both the baseline Reddit data and the VADER scores by comment. We'll then consider 
+comments with a positive rating score of 20 through ggplot scatter plots. 
+
+ggplot(nyc_full[which(nyc_full$score>20),], aes(x=compound, y=score)) + geom_point()
+
+Let's look at the equivalent for sentiment among posts that received a negative score. 
+
+
+ggplot(nyc_full[which(nyc_full$score<0),], aes(x=compound, y=score)) + geom_point()
+

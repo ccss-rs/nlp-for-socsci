@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Text Preprocessing | Natural Language Processing for the Social Sciences</title>
-  <meta name="description" content="Chapter 2 Text Preprocessing | Natural Language Processing for the Social Sciences User Guide." />
+  <title>Chapter 2 Text Pre-processing | Summarise Tables</title>
+  <meta name="description" content="Learn core commands for text pre-processing." />
   <meta name="generator" content="bookdown 0.24.3 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Text Preprocessing | Natural Language Processing for the Social Sciences" />
+  <meta property="og:title" content="Chapter 2 Text Pre-processing | Summarise Tables" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://ccss-rs/nlp-for-socsci" />
   
-  <meta property="og:description" content="Chapter 2 Text Preprocessing | Natural Language Processing for the Social Sciences User Guide." />
+  <meta property="og:description" content="Learn core commands for text pre-processing." />
   <meta name="github-repo" content="ccss-rs/nlp-for-socsci" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Text Preprocessing | Natural Language Processing for the Social Sciences" />
+  <meta name="twitter:title" content="Chapter 2 Text Pre-processing | Summarise Tables" />
   
-  <meta name="twitter:description" content="Chapter 2 Text Preprocessing | Natural Language Processing for the Social Sciences User Guide." />
+  <meta name="twitter:description" content="Learn core commands for text pre-processing." />
   
 
 <meta name="author" content="Remy Stewart" />
 
 
-<meta name="date" content="2021-12-10" />
+<meta name="date" content="2022-02-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -145,14 +145,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#computational-social-sciences"><i class="fa fa-check"></i><b>1.3</b> Computational Social Sciences</a></li>
 <li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#nlp-core-vocabulary"><i class="fa fa-check"></i><b>1.4</b> NLP Core Vocabulary</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="textproc.html"><a href="textproc.html"><i class="fa fa-check"></i><b>2</b> Text Preprocessing</a>
+<li class="chapter" data-level="2" data-path="textproc.html"><a href="textproc.html"><i class="fa fa-check"></i><b>2</b> Text Pre-processing</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="textproc.html"><a href="textproc.html#character-encoding"><i class="fa fa-check"></i><b>2.1</b> Character Encoding</a></li>
 <li class="chapter" data-level="2.2" data-path="textproc.html"><a href="textproc.html#string-cleaning"><i class="fa fa-check"></i><b>2.2</b> String Cleaning</a></li>
 <li class="chapter" data-level="2.3" data-path="textproc.html"><a href="textproc.html#regular-expressions"><i class="fa fa-check"></i><b>2.3</b> Regular Expressions</a></li>
 <li class="chapter" data-level="2.4" data-path="textproc.html"><a href="textproc.html#lowercasing-concatenation"><i class="fa fa-check"></i><b>2.4</b> Lowercasing &amp; Concatenation</a></li>
 <li class="chapter" data-level="2.5" data-path="textproc.html"><a href="textproc.html#tokenization"><i class="fa fa-check"></i><b>2.5</b> Tokenization</a></li>
-<li class="chapter" data-level="2.6" data-path="textproc.html"><a href="textproc.html#optional-method-dependent-preprocessing-steps"><i class="fa fa-check"></i><b>2.6</b> Optional Method-Dependent Preprocessing Steps</a>
+<li class="chapter" data-level="2.6" data-path="textproc.html"><a href="textproc.html#optional-method-dependent-pre-processing-steps"><i class="fa fa-check"></i><b>2.6</b> Optional Method-Dependent Pre-processing Steps</a>
 <ul>
 <li class="chapter" data-level="2.6.1" data-path="textproc.html"><a href="textproc.html#stopwords"><i class="fa fa-check"></i><b>2.6.1</b> Stopwords</a></li>
 <li class="chapter" data-level="2.6.2" data-path="textproc.html"><a href="textproc.html#stemming"><i class="fa fa-check"></i><b>2.6.2</b> Stemming</a></li>
@@ -177,7 +177,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="ml.html"><a href="ml.html#topic-models"><i class="fa fa-check"></i><b>4.2</b> Topic Models</a></li>
 <li class="chapter" data-level="4.3" data-path="ml.html"><a href="ml.html#structural-topic-models"><i class="fa fa-check"></i><b>4.3</b> Structural Topic Models</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="ml.html"><a href="ml.html#preprocessing"><i class="fa fa-check"></i><b>4.3.1</b> Preprocessing</a></li>
+<li class="chapter" data-level="4.3.1" data-path="ml.html"><a href="ml.html#pre-processing"><i class="fa fa-check"></i><b>4.3.1</b> Pre-processing</a></li>
 <li class="chapter" data-level="4.3.2" data-path="ml.html"><a href="ml.html#fitting-the-model"><i class="fa fa-check"></i><b>4.3.2</b> Fitting the Model</a></li>
 <li class="chapter" data-level="4.3.3" data-path="ml.html"><a href="ml.html#variation-by-comment-score"><i class="fa fa-check"></i><b>4.3.3</b> Variation by Comment Score</a></li>
 <li class="chapter" data-level="4.3.4" data-path="ml.html"><a href="ml.html#extending-machine-learning"><i class="fa fa-check"></i><b>4.3.4</b> Extending Machine Learning</a></li>
@@ -238,7 +238,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Natural Language Processing for the Social Sciences</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Summarise Tables</a>
           </h1>
         </div>
 
@@ -247,109 +247,109 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="textproc" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Text Preprocessing</h1>
+<h1><span class="header-section-number">Chapter 2</span> Text Pre-processing</h1>
 <p>Preparing text data for NLP analysis presents unique challenges. Text can vary significantly in its degree of raw “messiness” compared to other common data types depending on where it was sourced from, what types of information the text commonly expresses, and what unwanted components within the text may be present.</p>
-<p><em>Text preprocessing</em> refers to a variety of techniques used to prepare text data into a form ready for analysis. Applicable preprocessing steps are therefore highly dependent on both the data set and your intended NLP methods. Some preprocessing strategies are for specific use cases, while there’s a general set of recurring techniques often required for NLP applications.</p>
-<p>NLP research findings are often heavily influenced by previous choices made within the research workflow, and text preprocessing decisions are one of the biggest contributors to this variability. How you decide to prepare text data can lead to significant variations in results further within your research. I will therefore provide an overview of a wide range of preprocessing options and encourage you to test out a variety of these for your specific use cases. This is key to ensure the robustness of your findings to various text specifications and will strengthen the rigor of your research overall.</p>
+<p><em>Text pre-processing</em> refers to a variety of techniques used to prepare text data into a form ready for analysis. Applicable pre-processing steps are therefore highly dependent on both the data set and your intended NLP methods. Some pre-processing strategies are for specific use cases, while there’s a general set of recurring techniques often required for NLP applications.</p>
+<p>NLP research findings are often heavily influenced by previous choices made within the research workflow, and text pre-processing decisions are one of the biggest contributors to this variability. How you decide to prepare text data can lead to significant variations in results further within your research. I will therefore provide an overview of a wide range of pre-processing options and encourage you to test out a variety of these for your specific use cases. This is key to ensure the robustness of your findings to various text specifications and will strengthen the rigor of your research overall.</p>
 <p>This demo focuses on four of my go-to R packages for NLP research that all stem from the <em>tidyverse</em> collection by Hadley Wickham and the team at R Studio. These packages are designed to be simple to implement and to build from each other for various tasks relevant to data preparation. <strong>readr</strong> facilitates the easy uploading of external data files such as CSVs into R while <strong>dplyr</strong> promotes streamlined data frame creation and manipulation from said files. <strong>stringr</strong> is all about working with character strings which is the data type that text falls under. <strong>tidytext</strong> provides more specialized functions to prepare text data for various NLP use cases.</p>
-<p>I’ll go ahead and load all of these packages into our working session under the assumption that you’ve installed them into your local machine through the install.packages() command. I’ll also read in our r/nyc data set from the provided CSV file sourced from this guide’s Github repository. I recommend that you create a folder on your computer that holds both the CSV data and a saved R file titled “text_preprocessing.R” in one location.</p>
+<p>I’ll go ahead and load all of these packages into our working session under the assumption that you’ve installed them into your local machine through the install.packages() command. I’ll also read in our r/nyc data set from the provided CSV file sourced from this guide’s <a href="https://github.com/ccss-rs/nlp-for-socsci">Github repository</a>. I recommend that you create a folder on your computer that holds both the CSV data and a saved R file titled “text_preprocessing.R” in one location.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="textproc.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb1-2"><a href="textproc.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb1-3"><a href="textproc.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
 <span id="cb1-4"><a href="textproc.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
 <span id="cb1-5"><a href="textproc.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="textproc.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="do">## EDIT THIS PATH FOR FINAL GUIDE LAUNCH</span></span>
-<span id="cb1-7"><a href="textproc.html#cb1-7" aria-hidden="true" tabindex="-1"></a>nyc <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;nyc_reddit.csv&quot;</span>)</span></code></pre></div>
+<span id="cb1-6"><a href="textproc.html#cb1-6" aria-hidden="true" tabindex="-1"></a>nyc <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;nyc_reddit_data.csv&quot;</span>)</span></code></pre></div>
 <div id="character-encoding" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Character Encoding</h2>
-<p><em>Character encoding</em> refers to numerical codes designed for programs to know how to display a text character. Particularly messy text sources such as website scrapes can lead to data sets that follow different types of character encoding schemes. This can create issues for reading in and manipulating text within a given program and/or method. Most English text data is used with either Unicode/UTF-8 or ASCII encoding, and we can check if our data set of r/nyc comments follows one of these encoding schemas after loading in our data.</p>
+<p><em>Character encoding</em> refers to numerical codes designed for programs to know how to display a text character. Particularly messy text sources such as website scrapes can lead to data sets that follow different types of character encoding schemas. This can create issues for reading in and manipulating text within a given program and/or method. Most English text data is used with either Unicode/UTF-8 or ASCII encoding, and we can check if our data set of r/nyc comments follows one of these encoding schemas after loading in our data.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="textproc.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">guess_encoding</span>(nyc<span class="sc">$</span>body)</span></code></pre></div>
+<pre><code>## Warning: One or more parsing issues, see `problems()` for details</code></pre>
 <pre><code>## # A tibble: 2 × 2
 ##   encoding     confidence
 ##   &lt;chr&gt;             &lt;dbl&gt;
 ## 1 UTF-8              1   
-## 2 windows-1252       0.68</code></pre>
-<p>Our 1 confidence score on the UTF-8 encoding for the text column of our data frame gives us assurance that the following preprocessing methods should work without issues around character encoding. Let’s now inspect our data set in more detail.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="textproc.html#cb4-1" aria-hidden="true" tabindex="-1"></a>nyc </span></code></pre></div>
-<pre><code>## # A tibble: 100,000 × 5
-##        id author               body                                                                                                                            score date   
-##     &lt;dbl&gt; &lt;chr&gt;                &lt;chr&gt;                                                                                                                           &lt;dbl&gt; &lt;chr&gt;  
-##  1   2666 chillwavexyx         &quot;Not just my experience, unfortunately. Very hard to take them on their word after what they did to me and millions of others.…     1 11/4/21
-##  2  30225 MG7444               &quot;Was Joe Biden disciplined? AOC? Any of the Democrats who are routinely photographed and video taped without masks?&quot;              -10 10/21/…
-##  3  85724 robswins             &quot;Imagine if cities actually used police like this. There are dozens of places I see where people dangerously break traffic law…    27 9/20/21
-##  4  13927 nydutch              &quot;No, it really, really is not. I don&#39;t see any hoookers pissing in the middle of 42nd st.&quot;                                          1 10/30/…
-##  5 117584 kittygirl9891        &quot;I&#39;m so worried about my car. It&#39;s parked in a basement garage. 😭&quot;                                                                 7 9/2/21 
-##  6 100790 Darrkman             &quot;Oh lord. \n\nI bet you&#39;re 30 yrs old at the oldest. \n\nDude I&#39;m not gonna explain to you about Adams and stop and frisk but …     1 9/10/21
-##  7  69805 Solagnas             &quot;You inferred wrong, idk what to tell you man. Its efficacy is what it is, it&#39;s not more or less effective just because the va…    -2 9/28/21
-##  8 138396 TheNormalAlternative &quot;Last I checked, this bridge was 30 miles north of NYC.&quot;                                                                           -6 8/20/21
-##  9 125491 couchTomatoe         &quot;Yes, I said that. Every corner.&quot;                                                                                                   2 8/27/21
-## 10  96017 twelvydubs           &quot;Earlier in the year we already extended WFH to early 2022. Now it&#39;s been extended even deeper into 2022, I&#39;m talking late spr…    19 9/13/21
+## 2 windows-1252       0.69</code></pre>
+<p>Our 1 confidence score on the UTF-8 encoding for the text column of our data frame gives us assurance that the following pre-processing methods should work without issues around character encoding. Let’s now inspect our data set in more detail.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="textproc.html#cb5-1" aria-hidden="true" tabindex="-1"></a>nyc </span></code></pre></div>
+<pre><code>## # A tibble: 100,000 × 3
+##      ...1 body                                                                                                                             score
+##     &lt;dbl&gt; &lt;chr&gt;                                                                                                                            &lt;dbl&gt;
+##  1  48839 &quot;All of us in NYC are slowly transforming into rats. Master Splinter is our final form.&quot;                                             8
+##  2 120046 &quot;I didn’t make it. Lol&quot;                                                                                                              2
+##  3  31160 &quot;COVID is the number one killer of police officers. Disgusting that you don’t want them to be safe.&quot;                                 0
+##  4  71990 &quot;We all know what&#39;s gonna happen in a week when he gets the medical bill&quot;                                                            3
+##  5 122888 &quot;Are you talking to me or nbc?&quot;                                                                                                      1
+##  6  45499 &quot;There are also activists pushing hard so that this doesn’t happen. See, we both can make broad, general statements that don’t …    -1
+##  7  84526 &quot;The Counter has become a solid lunch spot for me when I&#39;ve met up with people who live in midtown, times square be damned.&quot;         2
+##  8  63951 &quot;Would there be enough residential parking stickers for every car that lives in the neighborhood? I doubt it honestly.&quot;             -1
+##  9 112651 &quot;I don’t see how the tenant and landlords interests align at all. The landlords interests is profit, not the product or service…     1
+## 10 135967 &quot;There were a lot of downed branches by Jackie Robinson Park, but overall pretty unscathed. I did run by the biggest curb puddl…     2
 ## # … with 99,990 more rows</code></pre>
-<p>This provides us with the first 10 records of our data set. “id” is the unique identifier for each individual comment, “author” provides the Reddit username who wrote the comment, “body” features the text of the comment itself, “score” refers to the Reddit system of being able to “upvote” or “downvote” comments similar to a like/dislike framework, and “date” as the year, month, and day the comment was posted. Our preprocessing will focus on “body” as the main text feature of our data.</p>
+<p>This provides us with the first 10 records of our data set. “id” is the unique identifier for each individual comment, “body” features the text of the comment itself, and “score” refers to the Reddit system of being able to “upvote” or “downvote” comments similar to a like/dislike framework. Our pre-processing will focus on “body” as the main text feature of our data.</p>
 </div>
 <div id="string-cleaning" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> String Cleaning</h2>
-<p>String manipulation is key to virtually any form of text data cleaning a to remove unwanted noise within text and represent a given document in a more interpretable form. This is where functions in the stringr package particularly shine.</p>
-<p>Let’s first consider one semantically meaningless token found throughout our data set- “” This represents line breaks within HTML web syntax that were captured as a by-product of scraping our Reddit comments. We can use stringr’s str_remove_all function to strip out all instances of directly from the comment text.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="textproc.html#cb6-1" aria-hidden="true" tabindex="-1"></a>nyc<span class="sc">$</span>body <span class="ot">&lt;-</span> <span class="fu">str_remove_all</span>(nyc<span class="sc">$</span>body, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-<p>This successfully removes all instances of “” There are a variety of additional components of text data that a user may want to remove depending on their intended NLP use case. For example, deleting all punctuation is commonly desired within NLP methods since punctuation may be otherwise be tokenized as their own words. Our previous method is great at removing any exact match with “” within the comments, but a more streamlined technique to remove any undesired character type would save us much more time and code lines then individually having to identify every type of punctuation we’d like to remove.</p>
+<p>String manipulation is key to virtually any form of text data cleaning to remove unwanted noise within text and represent a given document in a more interpretable form. This is where functions in the stringr package particularly shine.</p>
+<p>Let’s first consider one semantically meaningless token found throughout our data set- “<code>\n</code>.” This represents line breaks within HTML web syntax that were captured as a by-product of scraping our Reddit comments. We can use stringr’s str_remove_all function to strip out all instances of <code>\n</code> directly from the comment text.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="textproc.html#cb7-1" aria-hidden="true" tabindex="-1"></a>nyc<span class="sc">$</span>body <span class="ot">&lt;-</span> <span class="fu">str_remove_all</span>(nyc<span class="sc">$</span>body, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<p>This successfully removes all instances of “<code>\n</code>.” There are a variety of additional components of text data that a user may want to remove depending on their intended NLP use case. For example, deleting all punctuation is commonly desired within NLP methods since punctuation may be otherwise be tokenized as their own words. Our previous method is great at removing any exact match with “<code>\n</code>” within the comments, but a more streamlined technique to remove any undesired character type would save us much more time and code lines then individually having to identify every type of punctuation we’d like to remove.</p>
 </div>
 <div id="regular-expressions" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Regular Expressions</h2>
 <p><em>Regular expressions</em>- commonly shorted to regexes- is a core tool within string manipulation to perform more complex text removal commands. Regexes allow you to identify patterns within text and perform selected operations on them. Regex design can get quite complicated and successfully constructing a regex for specific use cases is another topic in itself. They also must be handled with care, as they can easily end up editing your text data into a form you weren’t originally intending to occur. Regexes are however a highly flexible tool for solving advanced problems within text manipulation.</p>
 <p>Given that the remaining noise in our r/nyc comments features a wide variety of punctuation characters types, a regex that identifies and removes all punctuation will serve our purposes particularly well. The special regex we’ll use is [:punct:] which successfully identifies all punctuation characters. Removing said punctuation is achieved through another call with str_remove_all as follows:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="textproc.html#cb7-1" aria-hidden="true" tabindex="-1"></a>nyc<span class="sc">$</span>body <span class="ot">&lt;-</span> <span class="fu">str_remove_all</span>(nyc<span class="sc">$</span>body, <span class="st">&#39;[:punct:]&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="textproc.html#cb8-1" aria-hidden="true" tabindex="-1"></a>nyc<span class="sc">$</span>body <span class="ot">&lt;-</span> <span class="fu">str_remove_all</span>(nyc<span class="sc">$</span>body, <span class="st">&#39;[:punct:]&#39;</span>)</span></code></pre></div>
 </div>
 <div id="lowercasing-concatenation" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Lowercasing &amp; Concatenation</h2>
-<p>It’s common within text preprocessing to convert all words to lowercase since capitalization may lead a given NLP method to consider the same words as separate entities based on casing alone. You may also consider explicitly combining n-grams into single word units, such as concatenating all instances of the bi-gram “New York” into the single token of “New_York.” This isn’t as commonly used within NLP as lowercasing is, but there’s certain use cases where having n-grams connected with each other can be key to your research interests. The stringr-based techniques for lowercasing and concatenating are respectively follows:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="textproc.html#cb8-1" aria-hidden="true" tabindex="-1"></a>nyc<span class="sc">$</span>body <span class="ot">&lt;-</span> <span class="fu">str_to_lower</span>(nyc<span class="sc">$</span>body)</span>
-<span id="cb8-2"><a href="textproc.html#cb8-2" aria-hidden="true" tabindex="-1"></a>nyc<span class="sc">$</span>body <span class="ot">&lt;-</span> <span class="fu">str_replace_all</span>(nyc<span class="sc">$</span>body, <span class="st">&quot;New York&quot;</span>, <span class="st">&quot;New_York&quot;</span>)</span></code></pre></div>
+<p>It’s common within text pre-processing to convert all words to lowercase since capitalization may lead a given NLP method to consider the same words as separate entities based on casing alone. You may also consider explicitly combining n-grams into single word units, such as concatenating all instances of the bi-gram “New York” into the single token of “New_York.” This isn’t as commonly used within NLP as lowercasing is, but there’s certain use cases where having n-grams connected with each other can be key to your research interests. The stringr-based techniques for lowercasing and concatenating are respectively as follows:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="textproc.html#cb9-1" aria-hidden="true" tabindex="-1"></a>nyc<span class="sc">$</span>body <span class="ot">&lt;-</span> <span class="fu">str_to_lower</span>(nyc<span class="sc">$</span>body)</span>
+<span id="cb9-2"><a href="textproc.html#cb9-2" aria-hidden="true" tabindex="-1"></a>nyc<span class="sc">$</span>body <span class="ot">&lt;-</span> <span class="fu">str_replace_all</span>(nyc<span class="sc">$</span>body, <span class="st">&quot;New York&quot;</span>, <span class="st">&quot;New_York&quot;</span>)</span></code></pre></div>
 </div>
 <div id="tokenization" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Tokenization</h2>
-<p><em>Tokenization</em> as mentioned in this guide’s first chapter refers to the segmentation of text components into unit such as individual words, sentences, paragraphs, characters, or n-grams. While the best type of tokenization to use is highly dependent on your research questions and planned analyses, the most common tokenization units overall are individual words. I therefore employ tidytext’s unnest_tokens method to create a separate data frame with a designated row for each individual word within a r/nyc comment. The “word” argument specifies individual words as our tokenization unit.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="textproc.html#cb9-1" aria-hidden="true" tabindex="-1"></a>tokens <span class="ot">&lt;-</span> nyc <span class="sc">%&gt;%</span></span>
-<span id="cb9-2"><a href="textproc.html#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest_tokens</span>(<span class="st">&quot;word&quot;</span>, body)</span></code></pre></div>
+<p><em>Tokenization</em> as mentioned in this guide’s first chapter refers to the segmentation of text components into units such as individual words, sentences, paragraphs, characters, or n-grams. While the best type of tokenization to use is highly dependent on your research questions and planned analyses, the most common tokenization units overall are individual words. I therefore employ tidytext’s unnest_tokens method to create a separate data frame with a designated row for each individual word within a r/nyc comment. The “word” argument specifies individual words as our tokenization unit.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="textproc.html#cb10-1" aria-hidden="true" tabindex="-1"></a>tokens <span class="ot">&lt;-</span> nyc <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="textproc.html#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest_tokens</span>(<span class="st">&quot;word&quot;</span>, body)</span></code></pre></div>
 <p>Our 100,000 original comments are now almost 3.5 million rows of individual word tokens. By default, unnest_tokens lowercases the tokens and removes punctuation from the original string. This allows you to skip stringr’s to_lower and having to use a punctuation removal regex if you’re also planning on tokenizing your text data through tidytext.</p>
 </div>
-<div id="optional-method-dependent-preprocessing-steps" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Optional Method-Dependent Preprocessing Steps</h2>
-<p>There’s a variety of additional preprocessing techniques you may consider for your specific NLP research interests beyond the previously specified methods. These include stopword removal, stemming, and parts-of-speech tagging. These techniques are overall more case-by-base in their usefulness than string manipulation and tokenization are as core preprocessing steps. Even methods where techniques such as stopword removal or lemmatization are common, there is ongoing debates within the NLP community regarding whether said methods are helpful or appropriate. However, certain methods can be significantly aided by the right use of these preprocessing steps. It’s often best to see if your results change either with or without a given preprocessing technique, and if they do consider said differences in the interpretation of your overall research findings.</p>
+<div id="optional-method-dependent-pre-processing-steps" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Optional Method-Dependent Pre-processing Steps</h2>
+<p>There’s a variety of additional pre-processing techniques you may consider for your specific NLP research interests beyond the previously specified methods. These include stopword removal, stemming, and parts-of-speech tagging. These techniques are overall more case-by-case in their usefulness than string manipulation and tokenization are as core pre-processing steps. Even methods where techniques such as stopword removal or lemmatization are common, there is ongoing debates within the NLP community regarding whether said methods are helpful or appropriate. However, certain methods can be significantly aided by the right use of these pre-processing steps. It’s often best to see if your results change either with or without a given pre-processing technique, and if they do consider said differences in the interpretation of your overall research findings.</p>
 <div id="stopwords" class="section level3" number="2.6.1">
 <h3><span class="header-section-number">2.6.1</span> Stopwords</h3>
-<p><em>Stopwords</em> is the term for common words such as “the,” “but,” and “is” that are often understood as contextually irrelevant for the purposes of a given NLP analysis. Stop word removal is particularly helpful for when you’d like to focus on unique and/or subject-specific words that often carry more in-depth meaning than more common phrases. Topic models are one NLP method we’ll be exploring later in this guide where stop word removal is quite common, as the model is primarily used to discover conceptually deeper themes within text than what semantically generic words indicate. However, other use cases such as exploring how two communities differ in conversational styles may be better served by keeping stop words, since even common words can allude to meaningful differences between groups.</p>
-<p>If stop word removal seems relevant to your given research question, tidytext actually provides an established data set of common English stopwords for you to remove from your tokenized text. This is achieved through an <em>anti-join</em> of your own data and the stopwords data frame, which builds from query-language data merging principles to not include words that match both data sets. It’s also important to note that this pre-specified set of stopwords may not entirely translate to other common and conceptually less meaningful words within your own data. It’s therefore common to add terms to an initial list and perform additional stopword removal through techniques such as the previously delineated str_remove_all.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="textproc.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(stop_words)</span>
-<span id="cb10-2"><a href="textproc.html#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="textproc.html#cb10-3" aria-hidden="true" tabindex="-1"></a>tokens <span class="ot">&lt;-</span> tokens <span class="sc">%&gt;%</span></span>
-<span id="cb10-4"><a href="textproc.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words)</span></code></pre></div>
+<p><em>Stopwords</em> is the term for common words such as “the,” “but,” and “is” that are often understood as contextually irrelevant for the purposes of a given NLP analysis. Stopword removal is particularly helpful for when you’d like to focus on unique and/or subject-specific words that often carry more in-depth meaning than more common phrases. Topic models are one NLP method we’ll be exploring later in this guide where stopword removal is quite common, as the model is primarily used to discover conceptually deeper themes within text than what semantically generic words indicate. However, other use cases such as exploring how two communities differ in conversational styles may be better served by keeping stop words, since even common words can allude to meaningful differences between groups.</p>
+<p>If stopword removal seems relevant to your given research question, tidytext actually provides an established data set of common English stopwords for you to remove from your tokenized text. This is achieved through an <em>anti-join</em> of your own data and the stopwords data frame, which builds from query-language data merging principles to not include words that match both data sets. It’s also important to note that this pre-specified set of stopwords may not entirely translate to other common and conceptually less meaningful words within your own data. It’s therefore common to add terms to an initial list and perform additional stopword removal through techniques such as the previously delineated str_remove_all.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="textproc.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(stop_words)</span>
+<span id="cb11-2"><a href="textproc.html#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="textproc.html#cb11-3" aria-hidden="true" tabindex="-1"></a>tokens <span class="ot">&lt;-</span> tokens <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="textproc.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words)</span></code></pre></div>
 </div>
 <div id="stemming" class="section level3" number="2.6.2">
 <h3><span class="header-section-number">2.6.2</span> Stemming</h3>
 <p><em>Stemming</em> refers to reducing words to their base forms. This technique is often used to group together different words that have the same underlying root such as “swims,” “swimmer,” and “swimming” all referring to the base stem of “swim.” Stemming can be helpful to streamline vocabulary size, such as for machine learning NLP techniques where having less words that are similar to each other can cut down on processing time and resources for running already complex models. However, similar words via a core base root can also have different conceptual meanings or are used in distinct contexts from each other within text that stemming may minimize or lead to a misinterpretation of. There’s a variety of different stemming algorithms available with the most commonly used being the Porter stemmer. You’ll have to download the SnowballC package separately to use the Porter stemming technique. I demonstrate its application on our previously created tidytext word token data frame below:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="textproc.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SnowballC)</span>
-<span id="cb11-2"><a href="textproc.html#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="textproc.html#cb11-3" aria-hidden="true" tabindex="-1"></a>stems <span class="ot">&lt;-</span> tokens <span class="sc">%&gt;%</span></span>
-<span id="cb11-4"><a href="textproc.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">stem =</span> <span class="fu">wordStem</span>(word)) <span class="sc">%&gt;%</span></span>
-<span id="cb11-5"><a href="textproc.html#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(stem, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="textproc.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SnowballC)</span>
+<span id="cb12-2"><a href="textproc.html#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="textproc.html#cb12-3" aria-hidden="true" tabindex="-1"></a>stems <span class="ot">&lt;-</span> tokens <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="textproc.html#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">stem =</span> <span class="fu">wordStem</span>(word)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-5"><a href="textproc.html#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(stem, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 </div>
 <div id="parts-of-speech" class="section level3" number="2.6.3">
 <h3><span class="header-section-number">2.6.3</span> Parts-of-Speech</h3>
 <p>Part-of-speech (POS) tagging describes the process of identifying the lexical and grammatical category a word belongs to within a sentence, such as nouns, adverbs, conjunctions, and beyond. POS tags are often used for analyses where the type of words within text is of particular importance to your research interests. Potential cases of this include how actors interact with each other as expressed in a given sentence’s structure or how the frequency of certain linguistic features within text may be predictive of an outcome. Annotating each token’s respective POS type can be used to generate counts of overall categories or discover the most common words that fall into a given lexical class within your text.</p>
 <p>One disadvantage of POS tagging is that it can take a long time to process an entire tokenized corpus with each word’s matching POS class. Different libraries that support POS tagging often require you to download and load a separate annotation model that maps words to their correct POS categories as well. The udpipe package streamlines this process with its concurrent library commands delineated in the following code for our tokenized r/nyc comments below:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="textproc.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;udpipe&quot;</span>)</span>
-<span id="cb12-2"><a href="textproc.html#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="textproc.html#cb12-3" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">udpipe_download_model</span>(<span class="at">language =</span> <span class="st">&quot;english&quot;</span>)</span>
-<span id="cb12-4"><a href="textproc.html#cb12-4" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">udpipe_load_model</span>(model)</span>
-<span id="cb12-5"><a href="textproc.html#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="textproc.html#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Annotation will take quite some time, particularly if you&#39;re using the </span></span>
-<span id="cb12-7"><a href="textproc.html#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="do">## non-stopword version of our tokenized dataset </span></span>
-<span id="cb12-8"><a href="textproc.html#cb12-8" aria-hidden="true" tabindex="-1"></a>tags <span class="ot">&lt;-</span> <span class="fu">udpipe_annotate</span>(model, <span class="at">x =</span> tokens<span class="sc">$</span>word)</span>
-<span id="cb12-9"><a href="textproc.html#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="textproc.html#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="do">## The generated &quot;upos&quot; column in the following dataframe will have each token&#39;s </span></span>
-<span id="cb12-11"><a href="textproc.html#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="do">## identified POS tags.</span></span>
-<span id="cb12-12"><a href="textproc.html#cb12-12" aria-hidden="true" tabindex="-1"></a>pos <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(tags)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="textproc.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;udpipe&quot;</span>)</span>
+<span id="cb13-2"><a href="textproc.html#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="textproc.html#cb13-3" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">udpipe_download_model</span>(<span class="at">language =</span> <span class="st">&quot;english&quot;</span>)</span>
+<span id="cb13-4"><a href="textproc.html#cb13-4" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">udpipe_load_model</span>(model)</span>
+<span id="cb13-5"><a href="textproc.html#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="textproc.html#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Annotation will take quite some time, particularly if you&#39;re using the </span></span>
+<span id="cb13-7"><a href="textproc.html#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="do">## non-stopword version of our tokenized dataset </span></span>
+<span id="cb13-8"><a href="textproc.html#cb13-8" aria-hidden="true" tabindex="-1"></a>tags <span class="ot">&lt;-</span> <span class="fu">udpipe_annotate</span>(model, <span class="at">x =</span> tokens<span class="sc">$</span>word)</span>
+<span id="cb13-9"><a href="textproc.html#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="textproc.html#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="do">## The generated &quot;upos&quot; column in the following dataframe will have each token&#39;s </span></span>
+<span id="cb13-11"><a href="textproc.html#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="do">## identified POS tags.</span></span>
+<span id="cb13-12"><a href="textproc.html#cb13-12" aria-hidden="true" tabindex="-1"></a>pos <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(tags)</span></code></pre></div>
 
 </div>
 </div>

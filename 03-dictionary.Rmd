@@ -2,7 +2,7 @@
 
 Counting the prevalence and types of words used within text is a fundamental component of NLP that more complex methods often build from. Word counts offer plentiful information on what it being discussed within a given corpus, how common or rare said words are, who tends to use certain words, and how they differ in their use from other groups of interests. This chapter will provide both an overview of how word counts power the domain of dictionary-based NLP methods as well as walk through an application of counting words that fall into types of emotional sentiment within our r/nyc dataset. 
 
-Baseline word counts often feature either the entire vocabulary or the counts for all words within a given document. Of particular interest for many social scientists is the prevalence of words within text as relevant to an abstract concept or theme. This is where lexical *dictionaries* shine, referring to an established collection of words used to measure a certain phenomenon that can be applied to NLP various use cases. The measurement of said concept– while scaled and scored in different forms – is often based on initial word counts.
+Baseline word counts often feature either the entire vocabulary or the counts for all words within a given document. Of particular interest for many social scientists is the prevalence of words within text as relevant to an abstract concept or theme. This is where lexical *dictionaries* shine, referring to an established collection of words used to measure a certain phenomenon that can be applied to various NLP use cases. The measurement of said concept– while scaled and scored in different forms – is often based on initial word counts.
 
 Dictionary-based methods use designated lexicons designed to accurately capture a variety of words that all measure the concept of interest. Some dictionary methods focus on general lexical features such as pronouns, grammar usage, or asked questions. Other dictionaries attempt to measure more abstract ideas such as identifying words that indicate power, politeness, toxicity, and beyond. For example, a politeness dictionary would have a predetermined list of relevant words such as “please” and “thanks” that is then implemented to measure the count of these words within a text dataset. Dictionaries require the user to predetermine the relationship between a word and a concept. They can be applied across domains to varying degrees depending on the words that comprise the dictionary, the rigor in which the dictionary was created, and the ideas it attempts to measure. 
 
@@ -40,7 +40,7 @@ A NLP method that has been adopted across disciplines and is commonly based on e
 
 There’s a range of dictionary-based sentiment analyzers that have been developed and tested on various sources such as tweets, online market product reviews, newspaper opinion sections, or movie reviews. This diversity of sentiment tools subsequently can differ in their dictionary terms and how they compute their sentiment scores. 
 
-Intended sentiment within text is often highly contextual. Sentiment analysis methods therefore also differ in their consideration of intention within word usage. Intention with the negative sentiment of “cheap” referring to a bad product review takes a different tone when considering a “cheap” deal within an online marketplace. Applying a generic analysis tool in a context where a particular negative or positive phrase is used disproportionately often will likely produce inaccurate results. For example, “loss” as an often negatively categorized word within a sentiment dictionary would likely misrepresent many posts within a weight loss discussion forum. The influence of context is therefore essential to consider when choosing a sentiment dictionary for a specific research application. 
+Intended sentiment within text is often highly contextual. Sentiment analysis methods therefore also differ in their consideration of intention within word usage. Intention with the negative sentiment of “cheap” referring to a bad product review takes a different tone when considering a “cheap” deal within an online marketplace. Applying a generic analysis tool in a context where a particular negative or positive phrase is used disproportionately will likely produce inaccurate results. For example, “loss” as an often negatively categorized word within a sentiment dictionary would likely misrepresent many posts within a weight loss discussion forum. The influence of context is therefore essential to consider when choosing a sentiment dictionary for a specific research application. 
 
 ### VADER
 
@@ -57,7 +57,7 @@ library(stringr)
 library(vader)
 library(ggplot2)
 
-nyc <- read_csv("nyc_reddit.csv")
+nyc <- read_csv("nyc_reddit_data.csv")
 ```
 
 ### String Sentiment
@@ -72,7 +72,7 @@ get_vader("I hate how delayed the subway always is… being late for work sucks.
 
 Each get_vader call generates both the individual scores of each word accounting for its polarity and valence, as well as the four overarching sentiment scores of each string. The first string is strongly positive and is shown to account for both the capitalization of “love” and the heart emoticon. The second string has both a positive connotation through “helpful” but also a negative tone with “not a fan”, leading to a weakly negative compound score. The final string is accurately identified as strongly negative and successfully captures the intention behind the sad face emoticon. 
 
-Given our validation of VADER’s classification scheme to text very similar to our r/nyc comments, let’s go ahead and create a data frame of the VADER metrics of each of our comments through the vader_df() function. This can take some time to run given our dataset size and your computing resources. I’ve therefore included a “nyc_sentiment.csv” file of these scores pre-generated in the data file of the Github if you’d like to load in the sentiment scores directly instead. 
+Given our validation of VADER’s classification scheme to text very similar to our r/nyc comments, let’s go ahead and create a data frame of the VADER metrics of each of our comments through the vader_df() function. This can take some time to run given our dataset size and your computing resources. I’ve therefore included a “nyc_sentiment.csv” file of these scores pre-generated in the data file of the [Github](https://github.com/ccss-rs/nlp-for-socsci) if you’d like to load in the sentiment scores directly instead. 
 
 ### r/nyc Sentiment
 
@@ -103,7 +103,7 @@ top_neg <- nyc_sentiment %>%
 top_neg
 ```
 
-I'll skip reading through the details of the most negative comments due to their often disturbing content, but skimming the text lines gives a rather clear picture towards the themes they're discussing. The fact that these are the most negatively associated comments reflects VADER's ability to catch the negative emotional valence of text related to violence and discrimination quite effectively. 
+I'd recommend skipping the details of the most negative comments due to their often disturbing content, but skimming the text lines gives a rather clear picture towards the themes they're discussing. The fact that these are the most negatively associated comments reflects VADER's ability to catch the negative emotional valence of text related to violence and discrimination quite effectively. 
 
 
 ### Sentiment & Score
@@ -119,10 +119,10 @@ ggplot(nyc_full[which(nyc_full$score>20),], aes(x=compound, y=score)) + geom_poi
 ggplot(nyc_full[which(nyc_full$score<0),], aes(x=compound, y=score)) + geom_point()
 ```
 
-It looks like there isn't a noticable relationship between post score and expressed sentiment for either the most upvoted scores or the most downvoted scores. This alludes to the importance of context and close reading of one's text data to understand the more abstract themes of what is embraced or contested within the r/nyc subreddit community beyond a simple approach of sentiment analysis through dictionary counts. 
+It looks like there isn't a noticeable relationship between post score and expressed sentiment for either the most upvoted scores or the most downvoted scores. This alludes to the importance of context and close reading of one's text data to understand the more abstract themes of what is embraced or contested within the r/nyc subreddit community beyond a simple approach of sentiment analysis through dictionary counts. 
 
 ## Beyond Dictionaries
 
-This concludes our application of a dictionary-based sentiment analysis that can be easily replicated across other datasets to explore emotional polarity and intensity expressed within text. VADER is a particularly helpful tool for social media data, but other great sentiment analyzers avaliable in R are the multiple dictionaries included within [tidytext](https://www.tidytextmining.com/sentiment.html), [sentimentr]( https://github.com/trinker/sentimentr), and [SentimentAnalyis](https://cran.r-project.org/web/packages/SentimentAnalysis/vignettes/SentimentAnalysis.html). I highly recommend exploring each of the resources further to see how they differ in their approaches to computing sentiment scores and how the domains they’re designed to be particularly effective towards may align with your  research interests. 
+This concludes our application of a dictionary-based sentiment analysis that can be easily replicated across other datasets to explore emotional polarity and intensity expressed within text. VADER is a particularly helpful tool for social media data, but other great sentiment analyzers available in R are the multiple dictionaries included within [tidytext](https://www.tidytextmining.com/sentiment.html), [sentimentr]( https://github.com/trinker/sentimentr), and [SentimentAnalyis](https://cran.r-project.org/web/packages/SentimentAnalysis/vignettes/SentimentAnalysis.html). I highly recommend exploring each of the resources further to see how they differ in their approaches to computing sentiment scores and how the domains they’re designed to be particularly effective towards may align with your  research interests. 
 
 A major limitation of dictionaries is their restricted ability to incorporate words in context to each other. This has promoted alternative sentiment analysis techniques that use supervised machine learning methods to classify expressed sentiment and emotions with a greater attention to context and word co-occurrences. We’ll dig deeper into potential machine learning approaches in the next chapter of this guide by introducing the unsupervised method of topic modeling. 

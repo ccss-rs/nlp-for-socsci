@@ -22,20 +22,20 @@ There are a variety of topic modeling methods with the most commonly employed be
 
 The innovation that STM offers over LDA is linking relevant metadata within your data set to their variation across topics as well. This essentially incorporates a “covariate” design similar to regression models that are already familiar to quantitative social scientists. We’ll therefore investigate how topic prevalence varies with with a comment’s associated score in our r/nyc sample. 
 
-### Preprocessing
+### Pre-processing
 
-Compared to the dictionary-based sentiment analysis in the previous demo which can handle text data often in its original raw format, topic models are a method that requires extensive pre-processing. Word tokenization, punctuation removal, lowercasing, and stopword removal are all standard steps to prepare data for topic models. For the start of our demo, I first load in our required library and datasets. I then use STM’s built-in document preprocessing function which performs many of the same cleaning and preparation steps featured in the text preprocessing chapter of this guide. The textProcessor() function’s first argument is the data’s text column, while the metadata parameters refers to any covariates you may be interested in exploring their association across generated topics with. 
+Compared to the dictionary-based sentiment analysis in the previous demo which can handle text data often in its original raw format, topic models are a method that requires extensive pre-processing. Word tokenization, punctuation removal, lowercasing, and stopword removal are all standard steps to prepare data for topic models. For the start of our demo, I first load in our required library and datasets. I then use STM’s built-in document pre-processing function which performs many of the same cleaning and preparation steps featured in the text pre-processing chapter of this guide. The textProcessor() function’s first argument is the data’s text column, while the metadata parameters refers to the location of any covariates you may be interested in exploring their association across generated topics with. 
 
 ```{r, message=FALSE, warning = FALSE, results = FALSE}
 library(readr)
 library(stm)
 
-nyc <- read_csv("nyc_reddit.csv")
+nyc <- read_csv("nyc_reddit_data.csv")
 
 processed <- textProcessor(nyc$body, metadata = nyc, stem = FALSE)
 ```
 
-Having finished our necessary preprocessing of the r/nyc comments, we then move to reshaping the text into a specific format for topic models known as the *document-term matrix*. Within this matrix each word token is a row, and each column represents a document within the corpus. We also generate separate objects of the entire vocabulary across our documents as well as for the potential metadata covariate features. All of these components need to be separately prepared to build our topic model’s necessary parameters for analysis. 
+Having finished our necessary pre-processing of the r/nyc comments, we then move to reshaping the text into a specific format for topic models known as the *document-term matrix*. Within this matrix each word token is a row, and each column represents a document within the corpus. We also generate separate objects of the entire vocabulary across our documents as well as for the potential metadata covariate features. All of these components need to be separately prepared to build our topic model’s necessary parameters for analysis. 
 
 ```{r, message=FALSE, warning = FALSE, results = FALSE}
 out <- prepDocuments(processed$documents, processed$vocab, processed$meta) 
@@ -64,7 +64,7 @@ load("~/Documents/GitHub/nlp-for-socsci/nyc_STM.RData")
 summary(nyc_redditFit)
 ```
 
-Our 15 generated topics seem to cover a representative range of themes within r/nyc. STM produces a range of associated words with each topic based on different metrics, but we’ll just focus on the first line within each topic that lists the words with the highest probability of being associated with said topic when they occur in a comment. 
+Our 15 generated topics seem to cover a representative range of themes within r/nyc. STM produces a range of associated words with each topic based on different metrics, but we’ll just focus on the first line within each topic that lists the words with the highest probability of being associated with said topic when they occur in a comment. Note that since STM is a probabilistic model, you'll likely see slightly different results than these if you run the model on your own computer.  
 
 Topic 1 seems to be about local housing, topic 2 about work, topic 3 with words around user engagement in r/nyc related to reading posts and links, topic 4 as informal response words within comment conversation, and so forth. This demonstrates some core takeaways as regarding topic models. First, subjective interpretation is key to understanding what it is the model output means when grouping associated words. Second, some topics demonstrate much more concise associations regarding their underlying subject over others. 
 
@@ -75,7 +75,7 @@ thoughts15 <- findThoughts(nyc_redditFit, texts = out$meta$body, topics = 15, n=
 thoughts15
 ```
 
-These three comments suggests that Topic 15 is picking up discourse around user critiques, perhaps occurring within more discourse-oriented  discussions. This is an example of just how essential close text readings often are within NLP analysis to link model findings to conceptual meanings regarding complex linguistic phenomena. 
+These three comments suggests that Topic 15 is picking up users' critiques, perhaps occurring within more discourse-oriented  discussions. This is an example of just how essential close text readings often are within NLP analysis to link model findings to conceptual meanings regarding complex linguistic phenomena. 
 
 ### Variation by Comment Score
 
@@ -86,7 +86,7 @@ score_topics <- estimateEffect(formula = 1:15 ~ score, nyc_redditFit, meta=out$m
 summary(score_topics, topics=c(11, 14))
 ```
 
-Topic 11’s most probable words includes “problem”, “business”, and “restaurants”, while topic 14 is associated with “water”, “food”, “vote”, and “mayor”. We can see from estimateEffect’s results that topic 11 is significantly associated with comments that receive lower score values, while topic 14 is linked with comments that obtain higher scores. Investigating the associated comments would be a natural next step from these findings to see if additional trends emerge within the text itself that may be relevant to how the comment is reacted to within the wider r/nyc community.  
+Topic 11’s most probable words includes “problem”, “business”, and “restaurants”, while topic 14 is associated with “water”, “food”, “vote”, and “mayor”. We can see from estimateEffect’s results that topic 11 does not demonstrate a significant association with comment scores, while topic 14 is linked with comments that obtain higher scores. Investigating the associated comments would be a natural next step from these findings to see if additional trends emerge within the text itself that may be relevant to how the comment is reacted to within the wider r/nyc community.  
 
 ### Extending Machine Learning
 
