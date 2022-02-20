@@ -1,4 +1,3 @@
-# Preface {-}
 --- 
 title: "Natural Language Processing for the Social Sciences"
 author: "Remy Stewart"
@@ -13,6 +12,8 @@ github-repo: ccss-rs/nlp-for-socsci
 url: 'http\://ccss-rs/nlp-for-socsci'
 description: "Natural Language Processing for the Social Sciences User Guide."
 ---
+
+# Preface
 
 Welcome to the Natural Language Processing for Social Sciences User Guide provided by the Cornell Center for Social Sciences (CCSS). This guide serves as both the written version of the Spring 2022 workshop under the same name as well as a standing reference available to the wider Cornell community. You'll find the guide's [associated repository](https://github.com/ccss-rs/nlp-for-socsci) here on the CCSS Github page as well.  
 
