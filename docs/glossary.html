@@ -4,33 +4,33 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Glossary | Summarise Tables</title>
+  <title>Chapter 8 Glossary</title>
   <meta name="description" content="Learn core commands for text pre-processing." />
   <meta name="generator" content="bookdown 0.24.3 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Glossary | Summarise Tables" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://ccss-rs/nlp-for-socsci" />
-  
+
   <meta property="og:description" content="Learn core commands for text pre-processing." />
   <meta name="github-repo" content="ccss-rs/nlp-for-socsci" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 8 Glossary | Summarise Tables" />
-  
+
   <meta name="twitter:description" content="Learn core commands for text pre-processing." />
-  
+
 
 <meta name="author" content="Remy Stewart" />
 
 
-<meta name="date" content="2022-03-10" />
+<meta name="date" content="2022-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
+
+
 <link rel="prev" href="references.html"/>
 
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
@@ -328,38 +328,6 @@ features within social media, such as emojis and punctuation use.</p>
 <p><strong>Word Embeddings</strong>- Reduces a vocubularly to a lower dimension by converting text into
 a numerical vector representation. This subsequentially represents the core concepts within
 text and allows for identifying word similarities within the embedding dimensions.</p>
-
-<p>In this demo, we’ll be performing exploratory analysis on the expressed emotional
-sentiment of r/nyc users as embedded within their comment text. We will use readr,
-dplylr, and stringr once again as these packages are core libraries
-across NLP use cases. We’re also including the <strong>vader</strong> package which wraps the original
-VADER sentiment analyser written in Python for R as well as <strong>ggplot</strong> for simple
-data visualizations. Let’s load them all in along with our r/nyc comment data set as follows:</p>
-<p>library(readr)
-library(dplyr)
-library(stringr)
-library(vader)
-library(ggplot2)</p>
-<p>nyc &lt;- read_csv(“nyc_reddit.csv”)</p>
-<p>get_vader(“As someone who always depended on cars before, I LOVE the subway! &lt;3”)</p>
-<p>get_vader(“The subway is very helpful, but I’m not a fan of the rats.”)</p>
-<p>get_vader(“I hate how delayed the subway always is… being late for work sucks. :(”)</p>
-<p>nyc_sentiment &lt;- vader_df(nyc$body)
-nyc_sentiment</p>
-<p>nyc_sentiment &lt;- read_csv(‘nyc_sentiment.csv’)</p>
-<p>top_pos &lt;- nyc_sentiment %&gt;%
-top_n(5, compound)
-top_pos$body</p>
-<p>top_neg &lt;- nyc_sentiment %&gt;%
-top_n(-5, compound)
-top_neg</p>
-<p>nyc_full &lt;- merge(nyc, nyc_sentiment, by = “body”)</p>
-<p>To prepare for this analysis, I’ll first have to join my separate data frames of
-both the baseline Reddit data and the VADER scores by comment. We’ll then consider
-comments with a positive rating score of 20 through ggplot scatter plots.</p>
-<p>ggplot(nyc_full[which(nyc_full$score&gt;20),], aes(x=compound, y=score)) + geom_point()</p>
-<p>Let’s look at the equivalent for sentiment among posts that received a negative score.</p>
-<p>ggplot(nyc_full[which(nyc_full$score&lt;0),], aes(x=compound, y=score)) + geom_point()</p>
 
 </div>
             </section>

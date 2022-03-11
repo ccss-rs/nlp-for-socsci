@@ -24,7 +24,7 @@
 <meta name="author" content="Remy Stewart" />
 
 
-<meta name="date" content="2022-03-10" />
+<meta name="date" content="2022-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -273,18 +273,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Our 1 confidence score on the UTF-8 encoding for the text column of our data frame gives us assurance that the following pre-processing methods should work without issues around character encoding. Let’s now inspect our data set in more detail.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="textproc.html#cb5-1" aria-hidden="true" tabindex="-1"></a>nyc </span></code></pre></div>
 <pre><code>## # A tibble: 100,000 × 3
-##      ...1 body                                                                                                    score
-##     &lt;dbl&gt; &lt;chr&gt;                                                                                                   &lt;dbl&gt;
-##  1  48839 &quot;All of us in NYC are slowly transforming into rats. Master Splinter is our final form.&quot;                    8
-##  2 120046 &quot;I didn’t make it. Lol&quot;                                                                                     2
-##  3  31160 &quot;COVID is the number one killer of police officers. Disgusting that you don’t want them to be safe.&quot;        0
-##  4  71990 &quot;We all know what&#39;s gonna happen in a week when he gets the medical bill&quot;                                   3
-##  5 122888 &quot;Are you talking to me or nbc?&quot;                                                                             1
-##  6  45499 &quot;There are also activists pushing hard so that this doesn’t happen. See, we both can make broad, gener…    -1
-##  7  84526 &quot;The Counter has become a solid lunch spot for me when I&#39;ve met up with people who live in midtown, ti…     2
-##  8  63951 &quot;Would there be enough residential parking stickers for every car that lives in the neighborhood? I do…    -1
-##  9 112651 &quot;I don’t see how the tenant and landlords interests align at all. The landlords interests is profit, n…     1
-## 10 135967 &quot;There were a lot of downed branches by Jackie Robinson Park, but overall pretty unscathed. I did run …     2
+##      ...1 body                                                                           score
+##     &lt;dbl&gt; &lt;chr&gt;                                                                          &lt;dbl&gt;
+##  1  48839 &quot;All of us in NYC are slowly transforming into rats. Master Splinter is our f…     8
+##  2 120046 &quot;I didn’t make it. Lol&quot;                                                            2
+##  3  31160 &quot;COVID is the number one killer of police officers. Disgusting that you don’t…     0
+##  4  71990 &quot;We all know what&#39;s gonna happen in a week when he gets the medical bill&quot;          3
+##  5 122888 &quot;Are you talking to me or nbc?&quot;                                                    1
+##  6  45499 &quot;There are also activists pushing hard so that this doesn’t happen. See, we b…    -1
+##  7  84526 &quot;The Counter has become a solid lunch spot for me when I&#39;ve met up with peopl…     2
+##  8  63951 &quot;Would there be enough residential parking stickers for every car that lives …    -1
+##  9 112651 &quot;I don’t see how the tenant and landlords interests align at all. The landlor…     1
+## 10 135967 &quot;There were a lot of downed branches by Jackie Robinson Park, but overall pre…     2
 ## # … with 99,990 more rows</code></pre>
 <p>This provides us with the first 10 records of our data set. “id” is the unique identifier for each individual comment, “body” features the text of the comment itself, and “score” refers to the Reddit system of being able to “upvote” or “downvote” comments similar to a like/dislike framework. Our pre-processing will focus on “body” as the main text feature of our data.</p>
 </div>
