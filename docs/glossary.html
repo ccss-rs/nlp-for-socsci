@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Fundamental Concepts | Summarise Tables</title>
+  <title>Chapter 8 Glossary | Summarise Tables</title>
   <meta name="description" content="Learn core commands for text pre-processing." />
   <meta name="generator" content="bookdown 0.24.3 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Fundamental Concepts | Summarise Tables" />
+  <meta property="og:title" content="Chapter 8 Glossary | Summarise Tables" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://ccss-rs/nlp-for-socsci" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="ccss-rs/nlp-for-socsci" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Fundamental Concepts | Summarise Tables" />
+  <meta name="twitter:title" content="Chapter 8 Glossary | Summarise Tables" />
   
   <meta name="twitter:description" content="Learn core commands for text pre-processing." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="textproc.html"/>
+<link rel="prev" href="references.html"/>
+
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -247,76 +247,128 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Fundamental Concepts</h1>
-<div id="text-as-data" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Text as Data</h2>
-<p>Text is a seminal product of human interactions and social systems and has therefore been a longstanding data source within social science research. However, text data is often associated with qualitative scholarship given limitations of popular quantitative methods for handling words and language. While the numerical analysis of text has been of ongoing interest of fields such as linguistics and information sciences for decades, the employment of computational text analysis methods across a variety of academic disciplines has been a comparatively recent phenomenon. Said diffusion of the quantitative study of text is closely tied to the Digital Revolution’s concurrent facilitation of the <em>accessibility</em> of text data as well as <em>ability to model</em> said records within computationally-powered analyses.</p>
-<p><em>Digital traces</em> or <em>footprints</em> refer to the records individuals leave behind of their behavior, thoughts, relationships, and beyond that is digitally recorded and often acquirable by third parties (Golder and Macy 2014). Text data is one of the most common types of digital trace data as facilitated by the rise of the internet, particularly regarding social media platform use. Consider the following trend as visualized by Our World in Data of just how ubiquitous social media has become globally-</p>
-<iframe src="https://ourworldindata.org/grapher/users-by-social-media-platform?time=2004..2018&amp;country=Facebook~Instagram~MySpace~Pinterest~Reddit~Snapchat~TikTok~Tumblr~Twitter~WeChat~Whatsapp~YouTube" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
-</iframe>
-<p>While some of these platforms focus more on images and video content over text, all of them have at least some degree of text produced that is often publicly accessible. Plenty of additional online platforms such as online marketplaces or business and government websites also produce large amounts of text that can be used within social science research.</p>
-<p>Beyond internet mediums, there is also the concurrent shift of preexisting print documents to digitized formats as well as the production of more recent documents to now be available online. Newspaper archives, government records, and books across languages are all examples of these sources. Researchers can now analyze historical documents through new methodological approaches through their digitized versions as well as connect published material across time from decades-old records to modern day.</p>
-<center>
-<div class="figure">
-<img src="images/ny_times.png" alt="" />
-<p class="caption">From 1996 to 2021. Source: New York Times.</p>
-</div>
-</center>
-</div>
-<div id="natural-language-processing" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Natural Language Processing</h2>
-<p>The rise of the internet and its ubiquitous cataloging of produced text occurred alongside the growth of resources and methods to computationally explore said written records. <em>Natural language processing</em>- shortened to NLP- is the field that specializes in using computational tools to interpret text. NLP itself refers to a broad range of applications including speech and handwriting recognition, text generation, translation, and a wide variety of additional use cases. NLP methods range in complexity from simple counts of word occurrences to the ability to generate accurately predicted words through machine learning-powered artificial intelligence. Recent advances in NLP have increasingly been able to engage with more complex questions regarding text, such as the context words occur in, their conceptual similarities to other words, and the potentially multiple meanings of a given word.</p>
-<p>It is often computationally resource intensive to store, process, and interpret text data. These barriers limited NLP’s more widespread adoption within research across fields such as the social sciences, along with barriers regarding learning new programming languages and computational skills. Advances in the availability of computing resources have significantly sped up what may have otherwise be painfully slow algorithmic analyses and have made storage systems to save massive collections of text data widely available. The open-source software development movement has additionally lead to innovations in programming resources to employ NLP that are free, methodologically rigorous, and often more accessibly designed to learn.</p>
-</div>
-<div id="computational-social-sciences" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Computational Social Sciences</h2>
-<p>The subsequent adoption of NLP methods within social science research is a subset of the wider disciplinary establishment of the computational social sciences (CSS). Lazer et al. defines CSS as the “development and application of computational methods to complex, typically large-scale, human (sometimes simulated) behavioral data” (2009: 721). CSS spans a wide range of topics beyond text methods, with additional core areas including online community network analysis, geospatial tracking, agent-based modeling, and many more examples. However, CSS is particularly well-aligned with NLP methods when considering how much information on human behavior is embedded within text. A strength social scientists offer when conducting CSS research with NLP methods is their personal expertise towards interpreting often nuanced and contextualized findings within text data. Social scientists have therefore been on the cutting edge for conducting NLP-powered research across diverse topics and have formed related communities within universities and conferences connecting CSS and NLP practitioners.</p>
-<center>
-<div class="figure">
-<img src="images/css.png" alt="" />
-<p class="caption">Word embeddings from Kozlowski, Taddy, and Evans 2019 &amp; Structural Topic Models from Wilkerson &amp; Casas 2017</p>
-</div>
-</center>
-</div>
-<div id="nlp-core-vocabulary" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> NLP Core Vocabulary</h2>
-<p>This guide offers an introductory demonstration of how to apply NLP within your own research via R. Before moving to the chapter applications, we’ll review a series of core common terms within NLP used throughout the chapters. I’ll ground said terminology by first reviewing the data set that all of the following chapters will build from that is available on the guide’s GitHub repository.</p>
-<p>Our data set is 100,000 comments scraped from <a href="https://www.reddit.com/r/nyc/">“r/nyc”</a>, which is the largest community on the social media site Reddit for posts and conversation around anything related to New York City. I obtained these records through a recent call to the <a href="https://github.com/pushshift/api">Pushshift</a> Application Programming Interface (API) created by Jason Baumgartner. Reddit is known as the “Front Page of the Internet” and it is one of the most common social media sites studied within NLP research. Features of the platform that contribute to Reddit’s popularity within NLP is that its data is easy accessed, it features a range of sub-communities of potential interest, and it is a text discussion-oriented platform. I’ll also note that using Reddit data- as is the case with virtually all publicly accessible online trace data- comes with its own ethical considerations regarding privacy, sensitivity, and expectations around use within research. Please refer to the “Ethics” section in the final chapter of this guide for further thoughts around said topics.</p>
-<center>
-<div class="figure">
-<img src="images/nyc.png" alt="" />
-<p class="caption">Landing page of r/nyc.</p>
-</div>
-</center>
-<p>Now that we’ve familiarized ourselves with our data set, let’s consider how we would refer to its respective components through NLP terminology.</p>
-<ol style="list-style-type: decimal">
-<li><p>A <strong>corpus</strong> refers to the total collection of text being analyzed. This would be all 100k of our r/nyc Reddit comments. A <strong>vocabulary</strong> is the entire collection of unique words that occur within a given corpus.</p></li>
-<li><p>A <strong>document</strong> is an individual record within the corpus. This is equivalent to one collected r/nyc comment and all of its associated text.</p>
-<ul>
-<li>An example document would be “My favorite pizza place in Hell’s Kitchen is 99 Cent Fresh Pizza. I really love their BBQ Chicken Slice.”</li>
-</ul></li>
-<li><p><strong>Tokens</strong> are the smaller composite units within a given document. “Token” on its own most commonly refers to individual words, but the actual process of tokenization can feature larger units such as sentences or paragraphs.</p>
-<ul>
-<li><p>When referring to the tokens of the document example above, “My,” “favorite,” “pizza,” and “place” would be considered as four separate tokens of 21 total tokens including the sentence’s periods. However, another NLP method may instead operationalize this comment’s tokens as “My favorite pizza place in Hell’s Kitchen is 99 Cent Fresh Pizza.” and “I really love their BBQ Chicken Slice.”</p></li>
-<li><p>Tokenization can also be conducted to character-level granularity, such as with “p,” “i,” “z,” “z,” “a.”</p></li>
-</ul></li>
-<li><p><strong>N-grams</strong> considers multiple word tokens at once where “n” refers to a specified number. They are often employed for representing words that are conceptually different when considered as a whole unit rather than as individual tokens.</p>
-<ul>
-<li>The bi-gram of “Hell’s_Kitchen” is understood as a specific neighborhood through each word’s co-occurrence with each other than what “Hell’s” or “Kitchen” would imply on their own.</li>
-</ul></li>
-</ol>
-<p>These are the necessary terms to know when engaging with NLP methods and are often referred to directly within the R software packages we will be using in the following demos. With our core understanding of NLP and our data set now cemented, let’s move on to our first key step within our text analysis starting with text preprocessing in the next chapter.</p>
+<div id="glossary" class="section level1" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Glossary</h1>
+<p><strong>Causality</strong>- Methods that use text as either a relevant treatment that causes an
+effect or to measure how an experiment led to different outcomes across
+comparison groups.</p>
+<p><strong>Character Encoding</strong>- Representation of text characters as read by a computer
+program. The majority of NLP methods require either the Unicode/UTF-8 or ASCII
+encoding schemas.</p>
+<p><strong>Computational Social Sciences (CSS)</strong>- Subdiscipline that uses computational tools and
+methods to understand human behavior and social dynamics. While all of CSS draws
+from computer science, it is equivalently applicable across a diverse range of social
+science fields.</p>
+<p><strong>Concatenation</strong>- Pre-processing method that combines two seperate text strings into
+one.</p>
+<p><strong>Corpus</strong>- The sum collection of a text data set across all of its associated
+individual documents.</p>
+<p><strong>Dictionaries</strong>- NLP method that measures a concept of interest by identifying
+the prevalence of previously identifed related words within text. Primarily
+based on word counts, such as measuring the number of “emotionally
+positive” words within a document.</p>
+<p><strong>Digital Traces</strong>- Records of behavior individuals leave behind when interacting with
+online platforms and digital mediums. Often expressed as text such as within
+social media, email communication, and online marketplace posts &amp; reviews.</p>
+<p><strong>Document</strong>- An individual record within a text corpus. Can vary significantly in size,
+such as with short tweets to entire novels.</p>
+<p><strong>Fairness, Accountability, Transparency, and Ethics (FATE)</strong>- Subcommunity within
+data science and machine learning focused on ethical use of ML, protecting
+against potential harms, and prioritizing social beneficence.</p>
+<p><strong>LIWC</strong>- The Linguistic Inquiry Word Count is a proprietary software program that is
+a common application of NLP dictionary methods within the social sciences. LIWC
+features 70+ dictionaries measuring both linguistic and psychological features.</p>
+<p><strong>Machine Learning</strong>- Type of statistical modeling that improves its performance
+towards a designated task by cumulatively processing data. <em>Supervised learning</em>
+uses previously labeled data that identifies relationships of interest, while
+<em>unsupervised learning</em> uncovers patterns within data without prior knowledge
+or guidance.</p>
+<p><strong>Natural Language Processing (NLP)</strong>- Interdisciplinary field that uses
+computational methods to analyze human text and language. Well-suited for social
+science research given ongoing interest in text data and growing accessibility
+of NLP resources &amp; training opportunities.</p>
+<p><strong>Networks</strong>- Application of traditional social network methods mapping nodes and edges
+to relationships expressed within text. Common representations include word co-occurance
+frequencies and post engagement within text-based online communities.</p>
+<p><strong>N-Grams</strong>- Words as conceptually understood in relationship with each other that differs
+from their individual meanings. <em>N</em> is a placeholder for the count of words considered,
+such as bi-grams accounting for two words- “Hell’s Kitchen”- and tri-grams accounting
+for three words- “New York City.”</p>
+<p><strong>Parts-of-Speech (POS) Tags</strong>- identify the lexical and grammatical features of text,
+such as verbs, nouns, punctuation, and conjugates. The <em>universal dependencies</em> POS
+framework is designed to identify POS categories across different languages.</p>
+<p><strong>Pre-Processing</strong>- The workflow of preparing raw text data for NLP analysis. Includes
+widespread methods such as tokenization and string manipulation as well as
+case-by-case applications such as stopword removal, stemming, and POS tagging.</p>
+<p><strong>Regular Expressions (Regexes)</strong>- Syntax designed for pattern matching within text.
+Particularly useful to identify characters or text sequences that varies,
+such as all types of punctuation or different email addresses.</p>
+<p><strong>Sentiment Analysis</strong>- Method that identifies the expressed emotional connotations
+within text. Commonly delineated as positive, negative, or emotionally neutral
+sentiment.</p>
+<p><strong>Stemming</strong>- Reducing words to their base root, such as converting “swims,” “swimming,”
+and “swimmers” to their collective root of “swim.” Commonly justified as capturing
+the same baseline word concept while concurrently reducing vocabulary size.
+One of the most popular stemming frameworks is the <em>Porter stemmer</em>.</p>
+<p><strong>Stopwords</strong>- Removing common words from text such as “and,” “the,” and “but.” Often
+justified due to the predicted limited substantive relevance of these words
+towards research interest.</p>
+<p><strong>Tokenization</strong>- Splitting text documents into units that can be processed by a NLP
+method. Most commonly acheived by seperating individual words, but tokenization
+can also occur at the character, sentence, or paragraph level.</p>
+<p><strong>Topic Models</strong>- An unsupervised machine learning NLP method that identifies a set
+number of “topics” within a corpus that often captures core discussion subjects
+and named entities. <em>Structural Topic Models</em> are a subtype that maps
+identified topic prevalence with covariate values.</p>
+<p><strong>VADER</strong>- The Valence Aware Dictionary and Sentiment Reasoner is a sentiment dictionary
+that produces positive, negative, neutral, and compound scores of expressed sentiment
+within text. VADER is intentionally designed to account for unique textual
+features within social media, such as emojis and punctuation use.</p>
+<p><strong>Vocabulary</strong>- The collection of unique words found throughout the documents of a text corpus.</p>
+<p><strong>Word Embeddings</strong>- Reduces a vocubularly to a lower dimension by converting text into
+a numerical vector representation. This subsequentially represents the core concepts within
+text and allows for identifying word similarities within the embedding dimensions.</p>
 
-</div>
+<p>In this demo, we’ll be performing exploratory analysis on the expressed emotional
+sentiment of r/nyc users as embedded within their comment text. We will use readr,
+dplylr, and stringr once again as these packages are core libraries
+across NLP use cases. We’re also including the <strong>vader</strong> package which wraps the original
+VADER sentiment analyser written in Python for R as well as <strong>ggplot</strong> for simple
+data visualizations. Let’s load them all in along with our r/nyc comment data set as follows:</p>
+<p>library(readr)
+library(dplyr)
+library(stringr)
+library(vader)
+library(ggplot2)</p>
+<p>nyc &lt;- read_csv(“nyc_reddit.csv”)</p>
+<p>get_vader(“As someone who always depended on cars before, I LOVE the subway! &lt;3”)</p>
+<p>get_vader(“The subway is very helpful, but I’m not a fan of the rats.”)</p>
+<p>get_vader(“I hate how delayed the subway always is… being late for work sucks. :(”)</p>
+<p>nyc_sentiment &lt;- vader_df(nyc$body)
+nyc_sentiment</p>
+<p>nyc_sentiment &lt;- read_csv(‘nyc_sentiment.csv’)</p>
+<p>top_pos &lt;- nyc_sentiment %&gt;%
+top_n(5, compound)
+top_pos$body</p>
+<p>top_neg &lt;- nyc_sentiment %&gt;%
+top_n(-5, compound)
+top_neg</p>
+<p>nyc_full &lt;- merge(nyc, nyc_sentiment, by = “body”)</p>
+<p>To prepare for this analysis, I’ll first have to join my separate data frames of
+both the baseline Reddit data and the VADER scores by comment. We’ll then consider
+comments with a positive rating score of 20 through ggplot scatter plots.</p>
+<p>ggplot(nyc_full[which(nyc_full$score&gt;20),], aes(x=compound, y=score)) + geom_point()</p>
+<p>Let’s look at the equivalent for sentiment among posts that received a negative score.</p>
+<p>ggplot(nyc_full[which(nyc_full$score&lt;0),], aes(x=compound, y=score)) + geom_point()</p>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="textproc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="references.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -347,7 +399,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/07-glossary.Rmd",
 "text": "Edit"
 },
 "history": {

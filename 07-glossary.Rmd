@@ -1,0 +1,105 @@
+# Glossary {#glossary}
+
+**Causality**- Methods that use text as either a relevant treatment that causes an 
+effect or to measure how an experiment led to different outcomes across 
+comparison groups. 
+
+**Character Encoding**- Representation of text characters as read by a computer 
+program. The majority of NLP methods require either the Unicode/UTF-8 or ASCII 
+encoding schemas. 
+
+**Computational Social Sciences (CSS)**- Subdiscipline that uses computational tools and 
+methods to understand human behavior and social dynamics. While all of CSS draws
+from computer science, it is equivalently applicable across a diverse range of social
+science fields. 
+
+**Concatenation**- Pre-processing method that combines two seperate text strings into 
+one. 
+
+**Corpus**- The sum collection of a text data set across all of its associated 
+individual documents. 
+
+**Dictionaries**- NLP method that measures a concept of interest by identifying
+the prevalence of previously identifed related words within text. Primarily
+based on word counts, such as measuring the number of "emotionally 
+positive" words within a document. 
+
+**Digital Traces**- Records of behavior individuals leave behind when interacting with 
+online platforms and digital mediums. Often expressed as text such as within 
+social media, email communication, and online marketplace posts & reviews. 
+
+**Document**- An individual record within a text corpus. Can vary significantly in size,
+such as with short tweets to entire novels. 
+
+**Fairness, Accountability, Transparency, and Ethics (FATE)**- Subcommunity within
+data science and machine learning focused on ethical use of ML, protecting
+against potential harms, and prioritizing social beneficence.  
+
+**LIWC**- The Linguistic Inquiry Word Count is a proprietary software program that is 
+a common application of NLP dictionary methods within the social sciences. LIWC 
+features 70+ dictionaries measuring both linguistic and psychological features.
+
+**Machine Learning**- Type of statistical modeling that improves its performance 
+towards a designated task by cumulatively processing data. *Supervised learning* 
+uses previously labeled data that identifies relationships of interest, while 
+*unsupervised learning* uncovers patterns within data without prior knowledge 
+or guidance. 
+
+**Natural Language Processing (NLP)**- Interdisciplinary field that uses 
+computational methods to analyze human text and language. Well-suited for social 
+science research given ongoing interest in text data and growing accessibility 
+of NLP resources & training opportunities.
+
+**Networks**- Application of traditional social network methods mapping nodes and edges
+to relationships expressed within text. Common representations include word co-occurance
+frequencies and post engagement within text-based online communities.
+
+**N-Grams**- Words as conceptually understood in relationship with each other that differs
+from their individual meanings. *N* is a placeholder for the count of words considered,
+such as bi-grams accounting for two words- "Hell's Kitchen"- and tri-grams accounting 
+for three words- "New York City".
+
+**Parts-of-Speech (POS) Tags**- identify the lexical and grammatical features of text,
+such as verbs, nouns, punctuation, and conjugates. The *universal dependencies* POS
+framework is designed to identify POS categories across different languages. 
+
+**Pre-Processing**- The workflow of preparing raw text data for NLP analysis. Includes
+widespread methods such as tokenization and string manipulation as well as 
+case-by-case applications such as stopword removal, stemming, and POS tagging. 
+  
+**Regular Expressions (Regexes)**- Syntax designed for pattern matching within text. 
+Particularly useful to identify characters or text sequences that varies,
+such as all types of punctuation or different email addresses. 
+
+**Sentiment Analysis**- Method that identifies the expressed emotional connotations
+within text. Commonly delineated as positive, negative, or emotionally neutral 
+sentiment. 
+
+**Stemming**- Reducing words to their base root, such as converting "swims", "swimming",
+and "swimmers" to their collective root of "swim". Commonly justified as capturing
+the same baseline word concept while concurrently reducing vocabulary size. 
+One of the most popular stemming frameworks is the *Porter stemmer*.
+
+**Stopwords**- Removing common words from text such as "and", "the", and "but". Often 
+justified due to the predicted limited substantive relevance of these words 
+towards research interest. 
+
+**Tokenization**- Splitting text documents into units that can be processed by a NLP 
+method. Most commonly acheived by seperating individual words, but tokenization 
+can also occur at the character, sentence, or paragraph level. 
+
+**Topic Models**- An unsupervised machine learning NLP method that identifies a set 
+number of "topics" within a corpus that often captures core discussion subjects 
+and named entities. *Structural Topic Models* are a subtype that maps 
+identified topic prevalence with covariate values. 
+
+**VADER**- The Valence Aware Dictionary and Sentiment Reasoner is a sentiment dictionary
+that produces positive, negative, neutral, and compound scores of expressed sentiment
+within text. VADER is intentionally designed to account for unique textual 
+features within social media, such as emojis and punctuation use. 
+
+**Vocabulary**- The collection of unique words found throughout the documents of a text corpus. 
+
+**Word Embeddings**- Reduces a vocubularly to a lower dimension by converting text into
+a numerical vector representation. This subsequentially represents the core concepts within 
+text and allows for identifying word similarities within the embedding dimensions. 

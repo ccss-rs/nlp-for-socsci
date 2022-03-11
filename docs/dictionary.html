@@ -24,7 +24,7 @@
 <meta name="author" content="Remy Stewart" />
 
 
-<meta name="date" content="2022-02-19" />
+<meta name="date" content="2022-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -226,6 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5.2" data-path="references.html"><a href="references.html#ethics-within-nlp"><i class="fa fa-check"></i><b>7.5.2</b> Ethics within NLP</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i><b>8</b> Glossary</a></li>
 <li class="divider"></li>
 <li><a>Published with bookdown</a></li>
 
@@ -295,10 +296,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">4.2.2</span> String Sentiment</h3>
 <p>Let’s consider examples of individual strings to hone our intuition regarding how VADER generates its sentiment scores. The get_vader() function is our tool of choice to produce individual string scores which I apply to three examples as follows.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="dictionary.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_vader</span>(<span class="st">&quot;As someone who always depended on cars before, I LOVE the subway! &lt;3&quot;</span>)</span></code></pre></div>
-<pre><code>##                                     word_scores                                        compound                                             pos 
-## &quot;{0, 0, 0, 0, 0, 0, 0, 0, 0, 3.933, 0, 0, 1.9}&quot;                                         &quot;0.845&quot;                                         &quot;0.425&quot; 
-##                                             neu                                             neg                                       but_count 
-##                                         &quot;0.575&quot;                                             &quot;0&quot;                                             &quot;0&quot;</code></pre>
+<pre><code>##                                     word_scores                                        compound 
+## &quot;{0, 0, 0, 0, 0, 0, 0, 0, 0, 3.933, 0, 0, 1.9}&quot;                                         &quot;0.845&quot; 
+##                                             pos                                             neu 
+##                                         &quot;0.425&quot;                                         &quot;0.575&quot; 
+##                                             neg                                       but_count 
+##                                             &quot;0&quot;                                             &quot;0&quot;</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="dictionary.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_vader</span>(<span class="st">&quot;The subway is very helpful, but I&#39;m not a fan of the rats.&quot;</span>)</span></code></pre></div>
 <pre><code>##                                         word_scores                                            compound 
 ## &quot;{0, 0, 0, 0, 1.0465, 0, 0, 0, 0, -1.443, 0, 0, 0}&quot;                                            &quot;-0.102&quot; 
@@ -337,13 +340,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb25-2"><a href="dictionary.html#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">top_n</span>(<span class="sc">-</span><span class="dv">5</span>, compound)</span>
 <span id="cb25-3"><a href="dictionary.html#cb25-3" aria-hidden="true" tabindex="-1"></a>top_neg</span></code></pre></div>
 <pre><code>## # A tibble: 5 × 6
-##    ...1 body                                                                                                          compound   neg   neu   pos
-##   &lt;dbl&gt; &lt;chr&gt;                                                                                                            &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1 16952 &quot;But they were tested on fetal cells while researching very specific conditions.\n\nThe idea that someone sh…   -0.992 0.351 0.649 0    
-## 2 19203 &quot;Last I checked racists ideas lead to racist actions and racist actions leads to racist being elected and wr…   -0.994 0.421 0.539 0.04 
-## 3 21477 &quot;seeing criminals being executed in death penalty has an effect to people mind who are about to do heinous c…   -0.996 0.455 0.545 0    
-## 4 35037 &quot;NYC&#39;s murder rate is around 5.3 per 100,000\n\nFlorida&#39;s murder rate is 5.2\n\nTexas murder rate is 4.9\n\n…   -0.992 0.383 0.566 0.051
-## 5 41496 &quot;In NY, 66% of prisoners are in for violent crimes\n\n\&quot;Violent crimes\&quot; is a category that covers everythin…   -0.992 0.414 0.544 0.042</code></pre>
+##    ...1 body                                                                                 compound   neg   neu   pos
+##   &lt;dbl&gt; &lt;chr&gt;                                                                                   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 16952 &quot;But they were tested on fetal cells while researching very specific conditions.\n\…   -0.992 0.351 0.649 0    
+## 2 19203 &quot;Last I checked racists ideas lead to racist actions and racist actions leads to ra…   -0.994 0.421 0.539 0.04 
+## 3 21477 &quot;seeing criminals being executed in death penalty has an effect to people mind who …   -0.996 0.455 0.545 0    
+## 4 35037 &quot;NYC&#39;s murder rate is around 5.3 per 100,000\n\nFlorida&#39;s murder rate is 5.2\n\nTex…   -0.992 0.383 0.566 0.051
+## 5 41496 &quot;In NY, 66% of prisoners are in for violent crimes\n\n\&quot;Violent crimes\&quot; is a categ…   -0.992 0.414 0.544 0.042</code></pre>
 <p>I’d recommend skipping the details of the most negative comments due to their often disturbing content, but skimming the text lines gives a rather clear picture towards the themes they’re discussing. The fact that these are the most negatively associated comments reflects VADER’s ability to catch the negative emotional valence of text related to violence and discrimination quite effectively.</p>
 </div>
 <div id="sentiment-score" class="section level3" number="4.2.4">

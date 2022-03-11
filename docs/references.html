@@ -24,7 +24,7 @@
 <meta name="author" content="Remy Stewart" />
 
 
-<meta name="date" content="2022-02-19" />
+<meta name="date" content="2022-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="methodsethics.html"/>
-
+<link rel="next" href="glossary.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -226,6 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5.2" data-path="references.html"><a href="references.html#ethics-within-nlp"><i class="fa fa-check"></i><b>7.5.2</b> Ethics within NLP</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i><b>8</b> Glossary</a></li>
 <li class="divider"></li>
 <li><a>Published with bookdown</a></li>
 
@@ -479,38 +480,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Havens, Lucy, Melissa Terras, Benjamin Bach, and Beatrice Alex. 2020. “Situated Data, Situated Systems: A Methodology to Engage with Power Relations in Natural Language Processing Research.” <em>Proceedings of the Second Workshop on Gender Bias in Natural Language Processing</em>: 107-124.</li>
 </ul>
 
-<p>In this demo, we’ll be performing exploratory analysis on the expressed emotional
-sentiment of r/nyc users as embedded within their comment text. We will use readr,
-dplylr, and stringr once again as these packages are core libraries
-across NLP use cases. We’re also including the <strong>vader</strong> package which wraps the original
-VADER sentiment analyser written in Python for R as well as <strong>ggplot</strong> for simple
-data visualizations. Let’s load them all in along with our r/nyc comment data set as follows:</p>
-<p>library(readr)
-library(dplyr)
-library(stringr)
-library(vader)
-library(ggplot2)</p>
-<p>nyc &lt;- read_csv(“nyc_reddit.csv”)</p>
-<p>get_vader(“As someone who always depended on cars before, I LOVE the subway! &lt;3”)</p>
-<p>get_vader(“The subway is very helpful, but I’m not a fan of the rats.”)</p>
-<p>get_vader(“I hate how delayed the subway always is… being late for work sucks. :(”)</p>
-<p>nyc_sentiment &lt;- vader_df(nyc$body)
-nyc_sentiment</p>
-<p>nyc_sentiment &lt;- read_csv(‘nyc_sentiment.csv’)</p>
-<p>top_pos &lt;- nyc_sentiment %&gt;%
-top_n(5, compound)
-top_pos$body</p>
-<p>top_neg &lt;- nyc_sentiment %&gt;%
-top_n(-5, compound)
-top_neg</p>
-<p>nyc_full &lt;- merge(nyc, nyc_sentiment, by = “body”)</p>
-<p>To prepare for this analysis, I’ll first have to join my separate data frames of
-both the baseline Reddit data and the VADER scores by comment. We’ll then consider
-comments with a positive rating score of 20 through ggplot scatter plots.</p>
-<p>ggplot(nyc_full[which(nyc_full$score&gt;20),], aes(x=compound, y=score)) + geom_point()</p>
-<p>Let’s look at the equivalent for sentiment among posts that received a negative score.</p>
-<p>ggplot(nyc_full[which(nyc_full$score&lt;0),], aes(x=compound, y=score)) + geom_point()</p>
-
 </div>
 </div>
 </div>
@@ -520,8 +489,8 @@ comments with a positive rating score of 20 through ggplot scatter plots.</p>
           </div>
         </div>
       </div>
-<a href="methodsethics.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="methodsethics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="glossary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

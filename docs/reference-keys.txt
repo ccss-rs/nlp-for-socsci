@@ -68,3 +68,4 @@ nlps-perpetuation-of-bias-and-unethical-practices
 nlps-revealing-of-bias-and-unethical-practices
 participant-privacy-consent-and-agency
 incorporating-ethical-practices-within-nlp
+glossary
